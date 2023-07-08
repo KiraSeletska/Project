@@ -1,0 +1,36 @@
+.wrapper{
+    width: 100%;
+    margin: 50px 0 0 0px;
+}
+
+.wrapper h2{
+    display: inline-block;
+    margin-right: 50px;
+}
+
+.wrapper button{
+    color: #8B8B8B;
+    border: 2px solid #8B8B8B;
+    width: 120px;
+    height: 30px;
+    padding: auto;
+
+}
+.categoriesWrapper{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+.categoriesWrapper .img{
+width: 250px;
+height: 200px;
+background-color: gray;
+margin-bottom: 20px;
+
+}
+.categoriesWrapper p{
+    width: 200px;
+    margin: auto;
+    text-align: center;
+    word-wrap: break-word;
+}

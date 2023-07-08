@@ -1,0 +1,38 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 36px 30px 80px 30px;
+}
+.headerContainer img {
+  width: 72px;
+  height: 72px;
+}
+.headerContainer button {
+  /*padding: 14px 30px 15px 30px;*/
+  width: 130px;
+  height: 50px;
+  border-radius: 5px;
+  border: 2px solid #393;
+  background: #393;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  cursor: pointer;
+}
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+.list img{
+  width: 32px;
+  height: 32px;
+}

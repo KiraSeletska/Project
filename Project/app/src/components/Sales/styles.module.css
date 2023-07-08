@@ -1,0 +1,48 @@
+.salesContainer {
+  width: 1440px;
+  background-color: #a1e2eb;
+  color: #fff;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.textContainer {
+  font-size: 80px;
+  color: #fff;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+  margin: 130px 0 140px;
+  margin-left: 50px;
+}
+
+.textContainer span {
+  font-size: 63px;
+}
+
+.btnContainer {
+  margin-top: 60px;
+  display: flex;
+  gap: 80px;
+}
+
+.btn {
+  font-size: 25px;
+  font-weight: 700;
+  width: 240px;
+  height: 82px;
+  border-radius: 13px;
+  cursor: pointer;
+}
+.sales {
+  color: #2d2d2d;
+  background: #fff;
+}
+.more {
+  border: 2px solid #fff;
+  color: #fff;
+  background-color: #a1e2eb;
+}
+.imgContainer {
+  overflow: hidden;
+}
