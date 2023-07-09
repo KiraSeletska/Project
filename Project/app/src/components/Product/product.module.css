@@ -33,7 +33,13 @@
 .procent{
     color: #FF32A1;
     font-size: 10px;
+    
 }
 .title{
     font-size: 10px;
+    width: 300px;
+    word-wrap: break-word;
+    text-align: center;
+
+
 }
