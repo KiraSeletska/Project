@@ -3,20 +3,28 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom' 
 import './index.css';
 import App from './App';
+import { Categories } from './components/Categories';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+import { ErrorPage } from './components/ErrorPage';
+import { TEST } from './components/TEST';
+import { MainPage } from './components/mainPage';
 
+     {/*errorElement:  <ErrorPage />, */} 
 const router = createBrowserRouter([
     {
       path: '/',
       element: <App />,
+
       children: [
         {
           path: "/mainPage",
-          element: <div>Главная страница тут</div>
+          element: <MainPage/>
   
         },
         {
-        path: "/propdacts",
-        element: <div>Продукты все тут</div>
+        path: "/categories",
+        element: <Categories/>
       },
       {
         path: "/sales",
@@ -27,6 +35,10 @@ const router = createBrowserRouter([
         path: "/shoppingBag",
         element:  <div>Корзина  </div>
   
+      }, 
+      {
+        path: '/error',
+        element: <ErrorPage />
       },
       ]
     },
@@ -34,9 +46,10 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <Provider store={store}>
   <RouterProvider router={router}>
     <App />
   </RouterProvider>
-
+  </Provider>
 );
 

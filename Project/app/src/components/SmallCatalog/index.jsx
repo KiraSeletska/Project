@@ -1,27 +1,19 @@
 import  styles from './styles.module.css'
+import { useGetAllCategoriesQuery } from "../../redux/apiSlice";
+import { baseUrl } from "../../redux/apiSlice";
+import { Category } from "../Category";
 
 export const SmallCataloge = () => {
+    const { data } = useGetAllCategoriesQuery();
+
     return (
         <div className={styles.wrapper}>
             <h2>Catalog</h2>
 <button>All cataloges</button>
 <div className={styles.categoriesWrapper}>
-    <div>
-      <div className={styles.img}></div>
-        <p>Fertilizer</p>
-    </div>
-    <div>
-    <div className={styles.img}></div>
-        <p>Protective products and septic tanks</p>
-    </div>
-    <div>
-    <div className={styles.img}></div>
-        <p>Planting material	</p>
-    </div>
-    <div>
-    <div className={styles.img}></div>
-        <p>Tools and Inventor</p>
-    </div>
+{data && data.map((el) => ( el.id <= 4 &&
+        <Category key={el.id} title={el.title} image={baseUrl + el.image}/>
+      ))}
 </div>
         </div>
     )

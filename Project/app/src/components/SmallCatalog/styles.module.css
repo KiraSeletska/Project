@@ -20,7 +20,9 @@
     display: flex;
     justify-content: space-around;
     margin: 20px 0;
+    gap: 30px;
 }
+/*
 .categoriesWrapper .img{
 width: 250px;
 height: 200px;
@@ -33,4 +35,4 @@ margin-bottom: 20px;
     margin: auto;
     text-align: center;
     word-wrap: break-word;
-}
+}*/

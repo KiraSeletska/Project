@@ -7,11 +7,12 @@ import { CuponForm } from './components/CuponForm';
 function App() {
   return (
     <div className="App">
-          <Outlet/>
+       
           <Header/>
-<Sales/>
+          <Outlet/>
+{/*<Sales/>
 <SmallCataloge/>
-<CuponForm/>
+  <CuponForm/>*/}
     </div>
   );
 }

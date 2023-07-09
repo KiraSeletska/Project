@@ -1,0 +1,9 @@
+.wrapper h2{
+    margin: 80px 0;
+}
+
+.categoriesWrapper{
+    display: flex;
+    gap: 35px;
+    flex-wrap: wrap;
+}
