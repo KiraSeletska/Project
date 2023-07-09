@@ -9,6 +9,7 @@ import { store } from './redux/store';
 import { ErrorPage } from './components/ErrorPage';
 import { TEST } from './components/TEST';
 import { MainPage } from './components/mainPage';
+import { AllProducts } from './components/AllProducts';
 
      {/*errorElement:  <ErrorPage />, */} 
 const router = createBrowserRouter([
@@ -23,8 +24,8 @@ const router = createBrowserRouter([
   
         },
         {
-        path: "/categories",
-        element: <Categories/>
+        path: "/propducts",
+        element: <AllProducts/>
       },
       {
         path: "/sales",

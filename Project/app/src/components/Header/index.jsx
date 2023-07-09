@@ -16,7 +16,7 @@ export const Header = () => {
             <NavLink to="/mainPage">Main Page</NavLink>
           </li>
           <li>
-            <NavLink to="/categories">Categoris</NavLink>
+            <NavLink to="/propducts">All propducts</NavLink>
           </li>
           <li>
             <NavLink to="/sales">All sales</NavLink>

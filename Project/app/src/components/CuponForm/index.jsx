@@ -14,22 +14,22 @@ export const CuponForm = () => {
       },
       body: JSON.stringify(data),
     });
+    if (response.ok) {
+      console.log('response = ok');
+  } else {
+      console.log('Ooops');
+  }
   };
 
   const isPhoneValid = (phone) => {
-    return phone.startsWith("+49") || phone === "+4" || phone === "+";
-  };
+    return phone.startsWith('+49') || phone === '+4' || phone === '+'
+}
 
-  const handlePhoneChange = (e) => {
+const handlePhoneChange = (e) => {
     const phoneValue = e.target.value;
-    setValue(
-      "phone",
-      (isPhoneValid(phoneValue) ? phoneValue : `+49${phoneValue}`).replace(
-        /[^0-9\+]/,
-        ""
-      )
-    );
-  };
+    setValue('phone', (isPhoneValid(phoneValue)  ? phoneValue : `+49${phoneValue}`).replace(/[^0-9\+]/, ""));
+};
+
   return (
     <div className={styles.wrapper}>
       <section className={styles.centeringSection}>
@@ -59,7 +59,7 @@ export const CuponForm = () => {
               )}
             />
             <button className={styles.button} type="submit">
-              Get a discount
+              Cat a discount
             </button>
           </form>
         </div>
