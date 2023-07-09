@@ -1,0 +1,60 @@
+.wrapper{
+    width: 1321px;
+    height: 717px;
+}
+.title{}
+.prodauctContainer{
+    display: flex;
+    gap: 130px;
+}
+.prodauctContainer img{
+    width: 710px;
+height: 710px;
+}
+.infoContainer{
+
+}
+.price{
+    color: #000;
+font-size: 70px;
+font-style: normal;
+font-weight: 600;
+line-height: 130%;
+}
+.oldPrice{
+    color: #8B8B8B;
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 130%;
+letter-spacing: 0.6px;
+text-decoration-line: strikethrough;
+}
+.procent{
+    color: #FF32A1;
+font-family: Montserrat;
+font-size: 28px;
+font-style: normal;
+font-weight: 600;
+line-height: 130%;
+letter-spacing: 0.84px;
+}
+.btnToCard{
+    border-radius: 10px;
+border: 2px solid #393;
+background: #393;
+color: #FFF;
+font-family: Montserrat;
+font-size: 28px;
+font-style: normal;
+font-weight: 700;
+line-height: 130%;
+}
+.describe{
+    color: #000;
+    font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 130%;
+letter-spacing: 0.6px;
+}
