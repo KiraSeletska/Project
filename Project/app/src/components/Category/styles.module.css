@@ -1,4 +1,3 @@
-
 .imageContainer {
   position: relative;
   width: 318px;
@@ -15,7 +14,11 @@
   object-fit: cover;
 }
 .wrapper p {
-margin-top: 20px;
+  margin-top: 20px;
   text-align: center;
   word-wrap: break-word;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 23.4px;
 }

@@ -8,8 +8,10 @@ export const SmallCataloge = () => {
 
   return (
     <div className={styles.wrapper}>
+      <div className={styles.container}>
       <h2>Catalog</h2>
       <button>All cataloges</button>
+      </div>
       <div className={styles.categoriesWrapper}>
         {data &&
           data.map(

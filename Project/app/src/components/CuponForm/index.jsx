@@ -32,8 +32,10 @@ const handlePhoneChange = (e) => {
 
   return (
     <div className={styles.wrapper}>
-      <section className={styles.centeringSection}>
-        <img className={styles.image} src={gnome} alt="gnome" />
+    <div className={styles.imgContainer}>
+    <img className={styles.image} src={gnome} alt="gnome" />
+    </div>
+    
         <div className={styles.form}>
           <div className={styles.text}>
             <span>5% off </span>
@@ -63,7 +65,6 @@ const handlePhoneChange = (e) => {
             </button>
           </form>
         </div>
-      </section>
     </div>
   );
 };

@@ -10,7 +10,7 @@ export const Sales = () => {
             <span>New season</span>
             </h1>
             <div className={styles.btnContainer}>
-            <button className={styles.btn + ' ' + styles.sales}>Sale</button>
+            <button className={styles.btn}>Sale</button>
             </div>
             </div>
 

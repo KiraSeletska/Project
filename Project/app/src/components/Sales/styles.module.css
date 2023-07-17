@@ -1,16 +1,18 @@
 .salesContainer {
-  width: 1440px;
+ /* width: 1440px;*/
+ max-width: 1440px;
   background-color: #a1e2eb;
   color: #fff;
   display: grid;
-  grid-template-columns: auto 1fr;
+  /*grid-template-columns: auto 620px;*/
+  grid-template-columns: 2fr auto;
 }
 
 .textContainer {
   font-size: 80px;
   color: #fff;
   font-style: normal;
-  font-weight: 700;
+ 
   line-height: 130%;
   margin: 130px 0 140px;
   margin-left: 50px;
@@ -29,20 +31,14 @@
 .btn {
   font-size: 25px;
   font-weight: 700;
-  width: 240px;
+  width: 155px;
   height: 82px;
   border-radius: 13px;
   cursor: pointer;
+  background-color: white;
+  border: none;
 }
-.sales {
-  color: #2d2d2d;
-  background: #fff;
-}
-.more {
-  border: 2px solid #fff;
-  color: #fff;
-  background-color: #a1e2eb;
-}
+
 .imgContainer {
   overflow: hidden;
 }

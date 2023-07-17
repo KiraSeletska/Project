@@ -25,6 +25,8 @@ console.log(data)
       </div>)
 */
 
+
+
   return (
     <div className={styles.wrapper}>
             { isLoading ? <h1>LOADING...</h1> : 

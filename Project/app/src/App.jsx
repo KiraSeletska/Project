@@ -4,6 +4,7 @@ import { Sales } from './components/Sales';
 import { Outlet } from 'react-router-dom'
 import { SmallCataloge } from './components/SmallCatalog';
 import { CuponForm } from './components/CuponForm';
+import { Contact } from './components/Contact';
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
 {/*<Sales/>
 <SmallCataloge/>
   <CuponForm/>*/}
+  <Contact/>
     </div>
   );
 }

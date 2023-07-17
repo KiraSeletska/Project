@@ -1,39 +1,28 @@
 .wrapper {
     background: linear-gradient(223deg, #393 0%, #006300 100%);
+display: grid;
+grid-template-columns: 1fr 2fr;
 }
 
-.centeringSection {
-    display: flex;
-    width: 1200px;
-    margin: 0 auto;
-    padding: 45px 0;
-}
+.imgContainer{
+    margin: 27px 0 27px 91px;
 
-.text {
-    color: #FFF;
-    font-size: 90px;
-    font-weight: 700;
-    margin-bottom: 46px;
-}
-.text span{
-    font-size: 120px;
-}
-
-.image{
-    width: 448px;
-    height: 448px;
-    margin-right: 200px;
-    flex-shrink: 0;
-
-}
-
-.image img {
-    display: block;
 }
 
 .inputWrapper {
     margin-bottom: 30px;
 }
+
+.text {
+    color: #FFF;
+    font-size: 50px;
+    font-weight: 700;
+margin-bottom: 46px;
+}
+.text span{
+    font-size: 90px;
+}
+
 
 .input {
     width: 473px;
@@ -49,7 +38,12 @@
 }
 
 .form {
-    margin-right: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+
 }
 
 .button {
@@ -57,10 +51,9 @@
     border: 2.395px solid #FFF;
     background: transparent;
     color: #FFF;
-    font-family: Montserrat;
     font-size: 28.739px;
     font-weight: 700;
-    padding: 20px 151px;
-    margin-bottom: 45px;
+    width: 473px;
+    height: 75px;
     cursor: pointer;
 }
