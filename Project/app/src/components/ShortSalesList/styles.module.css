@@ -1,0 +1,33 @@
+.wrapper{}
+.wrapper h2{
+    font-size: 40px;
+font-weight: 700;
+line-height: 52px; 
+letter-spacing: 1.2px;
+margin-top: 50px;
+}
+.productsWrapper{
+    margin-top: 21px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+.prodacts{
+    display: flex;
+    gap: 44px;
+    transition: 1s;
+}
+.wrapper button{
+    height: 100%;
+    width: 50px;
+    position: absolute;
+    z-index: 111;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    font-size: 50px;
+}
+.btn{
+    top: 0;
+    right: 0px;
+}
