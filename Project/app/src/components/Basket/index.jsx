@@ -5,6 +5,7 @@ import delet from "../../images/Close.svg";
 import Plus from "../../images/Plus.svg";
 import Minus from "../../images/Minus.svg";
 import { useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
   countTotalPrice,
   deletPropductFromBasket,
@@ -38,9 +39,7 @@ export const Basket = () => {
 
       <div className={styles.productsContainer}>
         <div className={styles.productsList}>
-          <a href="">
-            Back to the store <img src={Back} alt="" />
-          </a>
+   <NavLink to="/propducts" >Back to the store <img src={Back} alt="" /></NavLink>
           {productsInBasket &&
             productsInBasket.map((el) => (
               <div className={styles.productContainer} key={el.id}>

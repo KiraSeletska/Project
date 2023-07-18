@@ -5,6 +5,7 @@ font-weight: 700;
 line-height: 52px; 
 letter-spacing: 1.2px;
 margin-top: 50px;
+margin-left: 30px;
 }
 .productsWrapper{
     margin-top: 21px;
@@ -17,7 +18,8 @@ margin-top: 50px;
     gap: 44px;
     transition: 1s;
 }
-.wrapper button{
+
+.btn{
     height: 100%;
     width: 50px;
     position: absolute;
@@ -27,7 +29,7 @@ margin-top: 50px;
     cursor: pointer;
     font-size: 50px;
 }
-.btn{
+.btnRight{
     top: 0;
     right: 0px;
 }

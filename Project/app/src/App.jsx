@@ -5,13 +5,17 @@ import { Outlet } from 'react-router-dom'
 import { SmallCataloge } from './components/SmallCatalog';
 import { CuponForm } from './components/CuponForm';
 import { Contact } from './components/Contact';
+import { MainPage } from './components/mainPage';
+
 function App() {
   return (
     <div className="App">
        
           <Header/>
           <Outlet/>
-{/*<Sales/>
+        
+{/*  <MainPage/>
+<Sales/>
 <SmallCataloge/>
   <CuponForm/>*/}
   <Contact/>

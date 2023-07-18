@@ -4,13 +4,18 @@ import { baseUrl } from "../../redux/apiSlice";
 import { Product } from "../Product";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-
+import { useDispatch } from 'react-redux'
+import { addProductToBasket
+} from "../../redux/basketSlice";
+import {
+ countTotalPrice } from "../../redux/basketSlice";
+ 
 export const ShortSalesList = () => {
   const { data } = useGetAllPropductsQuery();
   const [productsState, setProductsState] = useState(40);
 
   const oneStep = 600;
-
+  const dispatch = useDispatch()
   const stepPlus = () => {
     if (productsState < -2360) return;
     const step = productsState - oneStep;
@@ -23,11 +28,19 @@ export const ShortSalesList = () => {
     setProductsState(step);
   };
 
+  const addToBascetHandler = (event, el) => {
+    event.preventDefault()
+    const newProduct = { ...el, quantity: 1 };
+    dispatch(addProductToBasket(newProduct));
+    dispatch(countTotalPrice());
+  }
+
+
   return (
     <div className={styles.wrapper}>
       <h2>Sale</h2>
       <div className={styles.productsWrapper}>
-        <button className={styles.btn} onClick={() => stepPlus()}>
+        <button className={styles.btn + ' ' + styles.btnRight} onClick={() => stepPlus()}>
           {">"}
         </button>
         <div
@@ -44,13 +57,15 @@ export const ShortSalesList = () => {
                   price={el.price}
                   title={el.title}
                   image={baseUrl + el.image}
+                  addToBascetHandler={(e)=>
+                    addToBascetHandler(e, el)}
                 /> </NavLink>
               ) : (
                 ""
               )
             )}
         </div>
-        <button onClick={() => stepMin()}>{"<"}</button>
+        <button className={styles.btn} onClick={() => stepMin()}>{"<"}</button>
       </div>
     </div>
   );

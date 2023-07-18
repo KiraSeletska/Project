@@ -1,11 +1,9 @@
 .salesContainer {
- /* width: 1440px;*/
- /*max-width: 1440px;*/
   background-color: #a1e2eb;
   color: #fff;
   display: grid;
-  /*grid-template-columns: auto 620px;*/
   grid-template-columns: 2fr auto;
+
 }
 
 .textContainer {

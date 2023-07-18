@@ -1,5 +1,10 @@
+.wrapper {
+  margin: 0 30px;
+}
+
 .productsContainer {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 34px;
   }
@@ -9,7 +14,7 @@
   font-weight: 700;
   line-height: 52px; /* 52px */
   letter-spacing: 1.2px;
-  margin: 79px 0 91px;
+  margin-bottom: 91px;
 }
 .wrapper input {
   border-radius: 7px;
