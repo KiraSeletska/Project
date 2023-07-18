@@ -21,17 +21,25 @@ letter-spacing: 0.6px;
 margin-bottom: 15px;
 }
 .productContainer{
-    display: flex;
+   display: grid;
+   grid-template-columns: auto 1fr;
     gap: 70px;
 }
 .imageContainer{
-    width: 710px;
-    height: 710px;
+   max-width: 826px;
+   min-width: 300px;
+    height: 717px;
+    flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 .imageContainer img{
-    height: 100%;
-    width: auto;
+    width: 100%;
 
+    flex-shrink: 0;
+   
 }
 .description{
 font-size: 20px;

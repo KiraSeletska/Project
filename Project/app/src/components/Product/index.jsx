@@ -1,6 +1,6 @@
 import styles from "./product.module.css";
 
-export const Product = ({ discont_price, image, price, id, title }) => {
+export const Product = ({ discont_price, image, price, id, title, addToBascetHandler }) => {
 
 
   /*
@@ -10,6 +10,9 @@ export const Product = ({ discont_price, image, price, id, title }) => {
     <div className={styles.wrapper}>
         <div className={styles.imgContainer}>
         <img src={image} alt="" />
+        <button className={styles.addToCard}
+        onClick={addToBascetHandler}
+        >Add to card</button>
         </div>
 
       <div className={styles.priceContainer}>
