@@ -22,7 +22,7 @@ export const Header = () => {
             <NavLink to="/sales">All sales</NavLink>
           </li>
           <li>
-            <NavLink to="/shoppingBag"><img src={shoppingBag} alt="Basket" /></NavLink>
+            <NavLink to="/basket"><img src={shoppingBag} alt="Basket" /></NavLink>
           </li>
         </ul>
       </nav>

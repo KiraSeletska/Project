@@ -14,7 +14,8 @@ export const Categories = () => {
       <h2>Categories</h2>
       <div className={styles.categoriesWrapper}>
       {data && data.map((el) => (
-        <Category key={el.id} title={el.title} image={baseUrl + el.image}/>
+        <NavLink to={`/categories/${el.id}`}> 
+        <Category key={el.id} title={el.title} image={baseUrl + el.image}/></NavLink>
       ))}
       </div>
 

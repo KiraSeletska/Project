@@ -3,6 +3,7 @@ import { useGetAllPropductsQuery } from "../../redux/apiSlice";
 import { baseUrl } from "../../redux/apiSlice";
 import { Product } from "../Product";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export const ShortSalesList = () => {
   const { data } = useGetAllPropductsQuery();
@@ -36,13 +37,14 @@ export const ShortSalesList = () => {
           {data &&
             data.map((el) =>
               el.discont_price ? (
+                <NavLink key={el.id} to={`/products/${el.id}`}>
                 <Product
                   key={el.id}
                   discont_price={el.discont_price}
                   price={el.price}
                   title={el.title}
                   image={baseUrl + el.image}
-                />
+                /> </NavLink>
               ) : (
                 ""
               )

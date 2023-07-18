@@ -1,4 +1,4 @@
-import { Sales } from "../Sales"
+import { SalesSection } from "../SalesSection"
 import { SmallCataloge } from "../SmallCatalog"
 import { CuponForm } from "../CuponForm"
 import { ShortSalesList} from '../ShortSalesList'
@@ -6,7 +6,7 @@ import { ShortSalesList} from '../ShortSalesList'
 export const MainPage = () => {
     return (
 <div>
-<Sales/>
+<SalesSection/>
 <SmallCataloge/>
   <CuponForm/>
   < ShortSalesList/>

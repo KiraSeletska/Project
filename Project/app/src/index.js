@@ -12,13 +12,17 @@ import { MainPage } from './components/mainPage';
 import { AllProducts } from './components/AllProducts';
 import { Product } from './components/Product';
 import {PropductPage} from '../src/Pages/ProductPage'
+import { Basket } from './components/Basket';
+import {SalesPage} from './components/SalesPage'
+import { PropductsByCategory } from './components/PropductsByCategory';
+import { SingleProductPage } from './components/SingleProductPage';
 
      {/*errorElement:  <ErrorPage />, */} 
 const router = createBrowserRouter([
     {
       path: '/',
       element: <App />,
-
+///categories
       children: [
         {
           path: "/mainPage",
@@ -31,12 +35,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/sales",
-        element: <div>Распродажи тут</div>
+        element: <SalesPage/>
   
       },
       {
-        path: "/shoppingBag",
-        element:  <div>Корзина  </div>
+        path: "/categories",
+        element: <Categories/> 
+  
+      }, 
+      {
+        path: "/basket",
+        element: <Basket/> 
   
       }, 
       {
@@ -45,7 +54,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/products/:id',
-        element: <PropductPage/>,
+        element: <SingleProductPage />,
+      },   
+      {
+        path: '/categories/:id',
+        element: <PropductsByCategory/>,
       },
       ]
     },
