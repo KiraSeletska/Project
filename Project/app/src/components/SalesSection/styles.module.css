@@ -3,14 +3,12 @@
   color: #fff;
   display: grid;
   grid-template-columns: 2fr auto;
-
 }
 
 .textContainer {
   font-size: 80px;
   color: #fff;
   font-style: normal;
- 
   line-height: 130%;
   margin: 130px 0 140px;
   margin-left: 50px;

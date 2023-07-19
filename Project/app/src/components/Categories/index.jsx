@@ -6,7 +6,6 @@ import { baseUrl } from "../../redux/apiSlice";
 
 export const Categories = () => {
   const { data } = useGetAllCategoriesQuery();
-  console.log(data);
 
   return (
     <div className={styles.wrapper}>

@@ -4,7 +4,6 @@ import Back from "../../images/Back.svg";
 import delet from "../../images/Close.svg";
 import Plus from "../../images/Plus.svg";
 import Minus from "../../images/Minus.svg";
-import { useParams } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import {
   countTotalPrice,
@@ -20,7 +19,7 @@ export const Basket = () => {
   const dispatch = useDispatch();
 
   const deletProduct = (idEl) => {
-    dispatch(deletPropductFromBasket(idEl));
+    dispatch(deletPropductFromBasket(idEl));//Такие повторения нормальны? 
     dispatch(countTotalPrice());
   };
 
@@ -74,7 +73,7 @@ export const Basket = () => {
               </div>
             ))}
         </div>
-        <div className={styles.productOrder}>
+        <div className={styles.productOrder}>{/* Вынести в отдельный компонент? */}
           <form action="">
             <h3>Order details</h3>
             <span>Total</span>

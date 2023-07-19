@@ -11,15 +11,15 @@ export const Contact = () => {
         <p className={styles.phone}>+49 999 999 99 99</p>
         <div className={styles.iconsContainer}>
           <div className={styles.iconContainer}>
-            <a href="">
-              <img src={Instagram_icon} alt="" />
+            <a href="#">
+              <img src={Instagram_icon} alt="Logo instagram" />
               <p>Instagram</p>
             </a>
          
           </div>
           <div className={styles.iconContainer}>
-            <a href="">
-              <img src={WhatsApp_icon} alt="" />
+            <a href="#">
+              <img src={WhatsApp_icon} alt="Logo WhatsApp" />
               <p>WhatsApp</p>
             </a>
    
@@ -28,7 +28,7 @@ export const Contact = () => {
       </div>
       <div className={styles.adressWrapper}>
         <h3>Address</h3>
-        <a href="">Linkstraße 2, 8 OG, 10785, Berlin, Deutschland</a>
+        <a href="#">Linkstraße 2, 8 OG, 10785, Berlin, Deutschland</a>
         <p className={styles.workingTime}>Working Hours:</p>
         <p className={styles.time}>24 hours a day</p>
       </div>

@@ -5,7 +5,6 @@
   width: auto;
   margin: 0 30px;
   gap: 32px;
-
 }
 .wrapper h2 {
   font-size: 40px;
@@ -16,11 +15,10 @@
   margin: 79px 0 91px;
   width: 100%;
 }
-.sortContainer{
+.sortContainer {
   width: 100%;
   display: flex;
- align-items: center;
-
+  align-items: center;
 }
 .wrapper input {
   border-radius: 7px;
@@ -57,10 +55,10 @@
   line-height: 20.8px; /* 20.8px */
   letter-spacing: 0.48px;
 }
-.discSort{
+.discSort {
   margin: 0 40px;
 }
-.checkbox{
+.checkbox {
   zoom: 3;
 }
 .spanSorted {
@@ -78,4 +76,3 @@
   line-height: 20, 8px; /* 20.8px */
   letter-spacing: 0.48px;
 }
-

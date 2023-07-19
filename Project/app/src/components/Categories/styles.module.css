@@ -1,17 +1,16 @@
-.wrapper{
-    margin: 0 30px;
+.wrapper {
+  margin: 0 30px;
 }
-.wrapper h2{
-    margin: 80px 0;
-    font-size: 40px;
-font-weight: 700;
-line-height: 52px; /* 52px */
-letter-spacing: 1.2px;
-    
+.wrapper h2 {
+  margin: 80px 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 52px; /* 52px */
+  letter-spacing: 1.2px;
 }
 
-.categoriesWrapper{
-    display: flex;
-    gap: 35px;
-    flex-wrap: wrap;
+.categoriesWrapper {
+  display: flex;
+  gap: 35px;
+  flex-wrap: wrap;
 }

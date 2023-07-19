@@ -9,7 +9,6 @@ export const Header = () => {
   const totalProducts = useSelector((state) => state.basket.products)
 
   const showBasket = () => {
-    //if(totalProducts === undefined) return
     console.log(totalProducts)
   }
 
@@ -17,7 +16,7 @@ export const Header = () => {
     <header className={styles.headerContainer}>
       <div className={styles.logoContainer}>
         <img src={logo} alt="Logo" />
-        <button>Catalog</button>
+         <NavLink to="/propducts"><button>Catalog</button> </NavLink>
         <button
         onClick={()=>showBasket()}
         >Product in backet</button>

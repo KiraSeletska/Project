@@ -12,7 +12,7 @@ export const SingleProductPage = () => {
   const dispatch = useDispatch();
 
 
-  const addToBascetHandler = (event, el) => {
+  const addToBascetHandler = (event, el) => {//ПОВТОР!!
     event.preventDefault();
     const newProduct = { ...el, quantity: 1 };
     dispatch(addProductToBasket(newProduct));

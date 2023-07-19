@@ -7,6 +7,7 @@ export const store = configureStore({
     basket: basketReducer,
     [apiSlice.reducerPath]: apiSlice.reducer,
   },
-  middleware: (getDefaultMiddleware) =>//возбмт дефщдтный Middleware и доавть sliceApi.middleware
-    getDefaultMiddleware().concat(apiSlice.middleware),
+  middleware: (
+    getDefaultMiddleware //возьмет дефолтный Middleware и доавть sliceApi.middleware
+  ) => getDefaultMiddleware().concat(apiSlice.middleware),
 });

@@ -3,7 +3,7 @@ import {  useGetOneCategoryQuery} from '../../redux/apiSlice'
 import { NavLink, useParams } from 'react-router-dom'
 import { Product } from "../Product";
 import { baseUrl } from "../../redux/apiSlice";
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addProductToBasket
 } from "../../redux/basketSlice";
 import {
@@ -11,12 +11,11 @@ import {
  
 export const PropductsByCategory = () => {
     const { id } = useParams();
-    const { data, error, isLoading } =  useGetOneCategoryQuery(id);
-  console.log(data && data.data)
+    const { data } =  useGetOneCategoryQuery(id);
 
   const dispatch = useDispatch()
 
-  const addToBascetHandler = (event, el) => {
+  const addToBascetHandler = (event, el) => {//Может ее вынести куда-то? А то она много где повторяется
     event.preventDefault()
     const newProduct = { ...el, quantity: 1 };
     dispatch(addProductToBasket(newProduct));
@@ -26,7 +25,7 @@ export const PropductsByCategory = () => {
     return(
         <div className={styles.wrapper}>
            <h2>Tools and equipment</h2>
-            <div className={styles.sortContainer}>
+            <div className={styles.sortContainer}>{/* Форму для фильтра тоже вынести вместе с логикой? А как быть с чекбоксом, который вставлен посредине и там есть, а так нет? */}
                 <span className={styles.spanPrice}>Price</span>
                 <input  type="text" placeholder='trom'
                 className={styles.inputSort}/>

@@ -11,7 +11,7 @@ export const SalesPage = () => {
     const { data } = useGetAllPropductsQuery();
     const dispatch = useDispatch();
 
-    const addToBascetHandler = (event, el) => {
+    const addToBascetHandler = (event, el) => {//повтор!!!
       event.preventDefault();
       const newProduct = { ...el, quantity: 1 };
       dispatch(addProductToBasket(newProduct));
@@ -21,7 +21,7 @@ export const SalesPage = () => {
     return(
         <div className={styles.wrapper}>
             <h2>Products with sale</h2>
-            <div className={styles.sortContainer}>
+            <div className={styles.sortContainer}>{/**ПОВТОР!!! */}
                 <span className={styles.spanPrice}>Price</span>
                 <input  type="text" placeholder='trom'
                 className={styles.inputSort}/>
