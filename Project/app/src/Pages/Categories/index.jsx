@@ -1,7 +1,7 @@
 import { useGetAllCategoriesQuery } from "../../redux/apiSlice";
 import styles from "./styles.module.css";
 import { NavLink } from "react-router-dom";
-import { Category } from "../Category";
+import { Category } from "../../components/Category";
 import { baseUrl } from "../../redux/apiSlice";
 
 export const Categories = () => {

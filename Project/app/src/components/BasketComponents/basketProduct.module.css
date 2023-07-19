@@ -1,0 +1,122 @@
+.wrapper {
+    margin: 0 30px;
+  }
+  .wrapper h2 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 52px; /* 52px */
+    letter-spacing: 1.2px;
+  }
+  .wrapper a {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px; /* 26px */
+    display: block;
+    text-align: right;
+  }
+  .productsContainer {
+    display: grid;
+    grid-template-columns: 57% 30%;
+    gap: 60px;
+  }
+  .productsList {
+  }
+  
+  .productContainer {
+    border-bottom: 1px solid #a7a7a7;
+    border-top: 1px solid #a7a7a7;
+    padding: 45px 0;
+    display: grid;
+    grid-template-areas:
+      "img des des close"
+      "img . price ."
+      "img battons . .";
+    grid-template-columns: auto 2fr 1fr;
+    grid-template-rows: auto;
+    position: relative;
+  }
+  /*
+  .productContainer:not(:nth-child(1)) {
+      border: none;
+  }*/
+  .imgContainer {
+    grid-area: img;
+    margin-right: 29px;
+    width: 200px;
+    height: 200px;
+  }
+  .imgContainer img {
+    width: 200px;
+    height: 200px;
+  }
+  .titel {
+    color: #3a3a3a;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23.4px; /* 23.4px */
+    letter-spacing: 0.54px;
+    grid-area: des;
+  }
+  .pricesContainer {
+    grid-area: price;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+  }
+  .price {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 52px; /* 52px */
+    letter-spacing: 1.2px;
+  }
+  .price span {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.6px;
+  }
+  .discount_price {
+    color: #8b8b8b;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px; /* 26px */
+    letter-spacing: 0.6px;
+    text-decoration: line-through;
+  }
+  .qualityBattons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 140px;
+    height: 40px;
+    border-radius: 12px;
+    border: 1px solid #000;
+    grid-area: battons;
+  }
+  .qualityBattons button {
+    background-color: rgb(000, 000, 000, 0);
+    border: none;
+  }
+  .qualityBattons img {
+    height: 18px;
+    width: 18px;
+  }
+  .qualityBattons span {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23.4px; /* 23.4px */
+    letter-spacing: 0.54px;
+  }
+  .delet {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 111;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(000, 000, 000, 0);
+    border: none;
+    grid-area: close;
+  }

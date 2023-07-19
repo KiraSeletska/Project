@@ -5,7 +5,7 @@ import { Outlet } from 'react-router-dom'
 import { SmallCataloge } from './components/SmallCatalog';
 import { CuponForm } from './components/CuponForm';
 import { Contact } from './components/Contact';
-import { MainPage } from './components/mainPage';
+import { MainPage } from './Pages/MainPage';
 
 function App() {
   return (
