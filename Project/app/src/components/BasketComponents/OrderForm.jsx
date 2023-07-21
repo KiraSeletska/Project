@@ -35,7 +35,7 @@ export const OrderForm = ({ totalPrice, productsOrdered }) => {
           {totalPrice}
           <span className={styles.dollar}>$</span>
         </p>
-        <input type="text" onChange={(e) => savePhoneNumber(e.target.value)} />
+        <input type="text"  onChange={(e) => savePhoneNumber(e.target.value)} />
         <button onClick={() => sendOrder()} type="submit">
           Order
         </button>
