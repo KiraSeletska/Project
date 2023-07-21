@@ -1,9 +1,10 @@
 .productsWrapper {
   display: flex;
-  justify-content: space-between;
+ /* justify-content: space-between;*/
   flex-wrap: wrap;
   width: auto;
   margin: 0 30px;
+  gap: 34px;
 }
 .productsWrapper h2 {
   font-size: 40px;

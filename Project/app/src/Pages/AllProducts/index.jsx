@@ -1,35 +1,37 @@
-import { useGetAllPropductsQuery } from "../../redux/apiSlice";
-//import { Product } from "../Product";
+import { useGetAllPropductsQuery } from "../../redux/categoriesApi";
 import{ Product }from '../../components/Product'
-import { baseUrl } from "../../redux/apiSlice";
+import { baseUrl } from "../../redux/categoriesApi";
 import styles from "./products.module.css";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addProductToBasket } from "../../redux/basketSlice";
 import { countTotalPrice } from "../../redux/basketSlice";
-import { useState } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { Filter } from "../../components/Filter";
+import { ApplyFilter } from "../../util/ApplyFilter";
+
 
 export const AllProducts = () => {
   const { data } = useGetAllPropductsQuery();
   const dispatch = useDispatch();
-  console.log(data);
+
   const [newData, setNewData] = useState();
 
   const addToBascetHandler = (event, el) => {
     event.preventDefault();
     const newProduct = { ...el, quantity: 1 };
     dispatch(addProductToBasket(newProduct));
-    dispatch(countTotalPrice());
+  
   };
 
-  const getNewData = (arg) => {
-    setNewData(arg);
-  };
+  const onFilterChanged = useCallback((filterObj) => {
+    setNewData(ApplyFilter(data || [], filterObj))
+  }, [data])
+
   return (
     <div className={styles.productsWrapper}>
       <h2>All products</h2>
-      <Filter items={data !== undefined ? data : []} setNewData={getNewData} />
+      <Filter onChange={onFilterChanged}/>
       {newData &&
         newData.map((el) => (
           <NavLink key={el.id} to={`/products/${el.id}`}>

@@ -1,5 +1,5 @@
 import styles from "./basketProduct.module.css";
-import { baseUrl } from "../../redux/apiSlice";
+import { baseUrl } from "../../redux/categoriesApi";
 import delet from "../../images/Close.svg";
 import Plus from "../../images/Plus.svg";
 import Minus from "../../images/Minus.svg";

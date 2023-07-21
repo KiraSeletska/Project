@@ -1,7 +1,9 @@
 import styles from "./styles.module.css";
 import gnome from "../../images/gnome.svg";
 import { useForm, Controller } from "react-hook-form";
-import { baseUrl } from "../../redux/apiSlice";
+import { baseUrl } from "../../redux/categoriesApi";
+import { usePostPhoneNumberForDiscountMutation } from "../../redux/categoriesApi";
+
 
 export const CuponForm = () => {
   const { handleSubmit, control, setValue } = useForm();

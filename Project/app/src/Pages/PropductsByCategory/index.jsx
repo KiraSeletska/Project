@@ -1,20 +1,19 @@
 import styles from "./styles.module.css";
-import { useGetOneCategoryQuery } from "../../redux/apiSlice";
+import { useGetOneCategoryQuery } from "../../redux/categoriesApi";
 import { NavLink, useParams } from "react-router-dom";
-import { Product } from "../Product";
-import { baseUrl } from "../../redux/apiSlice";
+import { Product } from "../../components/Product";
+import { baseUrl } from "../../redux/categoriesApi";
 import { useDispatch } from "react-redux";
 import { addProductToBasket } from "../../redux/basketSlice";
 import { countTotalPrice } from "../../redux/basketSlice";
-import { useEffect, useState } from "react";
-import { Filter } from "../Filter";
-import { useGetAllPropductsQuery } from "../../redux/apiSlice";
+import { useEffect, useState, useCallback } from "react";
+import { Filter } from "../../components/Filter";
+import { ApplyFilter } from "../../util/ApplyFilter";
 
 export const PropductsByCategory = () => {
   const { id } = useParams();
   const { data } = useGetOneCategoryQuery(id);
-  //const { data } = useGetAllPropductsQuery();
-  console.log(data);
+
   const [newData, setNewData] = useState();
   const dispatch = useDispatch();
 
@@ -23,18 +22,16 @@ export const PropductsByCategory = () => {
     event.preventDefault();
     const newProduct = { ...el, quantity: 1 };
     dispatch(addProductToBasket(newProduct));
-    dispatch(countTotalPrice());
+
   };
-  const getNewData = (arg) => {
-    setNewData(arg);
-  };
+  const onFilterChanged = useCallback((filterObj) => {
+    setNewData(ApplyFilter(data?.data || [], filterObj))
+  }, [data])
+
   return (
     <div className={styles.wrapper}>
       <h2>Tools and equipment</h2>
-      <Filter
-        items={data !== undefined ? data.data : []}
-        setNewData={getNewData}
-      />
+      <Filter onChange={onFilterChanged}/>
       {newData &&
         newData.map((el) => (
           <NavLink key={el.id} to={`/products/${el.id}`}>

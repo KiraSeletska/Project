@@ -1,9 +1,8 @@
-
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const baseUrl = "http://127.0.0.1:3333/"
+export const baseUrl = "http://127.0.0.1:3333/";
 // /products/all   - ссылка на все продукты
-export const apiSlice = createApi({
+export const categoriesApi = createApi({
   reducerPath: "categories",
   baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),
   endpoints: (builder) => ({
@@ -19,6 +18,26 @@ export const apiSlice = createApi({
     getOneProductByCategory: builder.query({
       query: (id) => `products/${id}`,
     }),
+    postPhoneNumberForOrder: builder.mutation({
+      query: (payload) => ({
+        url: "order/send",
+        method: "POST",
+        body: payload,
+        headers: {
+          "Content-type": "application/json",
+        },
+      }),
+    }),
+    postPhoneNumberForDiscount: builder.mutation({
+      query: (payload) => ({
+        url: "sale/send",
+        method: "POST",
+        body: payload,
+        headers: {
+          "Content-type": "application/json",
+        },
+      }),
+    }),
   }),
 });
 
@@ -27,4 +46,6 @@ export const {
   useGetOneCategoryQuery,
   useGetAllPropductsQuery,
   useGetOneProductByCategoryQuery,
-} = apiSlice;
+  usePostPhoneNumberForOrderMutation,
+  usePostPhoneNumberForDiscountMutation
+} = categoriesApi;

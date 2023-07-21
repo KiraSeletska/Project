@@ -1,28 +1,29 @@
 import styles from "./styles.module.css";
-import { useGetOneProductByCategoryQuery } from "../../redux/apiSlice";
+import { useGetOneProductByCategoryQuery } from "../../redux/categoriesApi";
 import { useParams } from "react-router-dom";
-import { baseUrl } from "../../redux/apiSlice";
+import { baseUrl } from "../../redux/categoriesApi";
 import { useDispatch } from "react-redux";
 import { addProductToBasket } from "../../redux/basketSlice";
 import { countTotalPrice } from "../../redux/basketSlice";
 
 export const SingleProductPage = () => {
   const { id } = useParams();
-  const { data, isLoading } = useGetOneProductByCategoryQuery(id);
+  const { data, isLoading, error } = useGetOneProductByCategoryQuery(id);
   const dispatch = useDispatch();
-
-
-  const addToBascetHandler = (event, el) => {//ПОВТОР!!
+console.log(error)
+  const addToBascetHandler = (event, el) => {
+    //ПОВТОР!!
     event.preventDefault();
-    const newProduct = { ...el, quantity: 1 };
-    dispatch(addProductToBasket(newProduct));
-    dispatch(countTotalPrice());
+   
+    dispatch(addProductToBasket(el));
   };
 
   return (
     <div>
       {isLoading ? (
         <h2>LOADING...</h2>
+      ) : error ? (
+        <h2>Error: {error.error}</h2>
       ) : (
         <div className={styles.container}>
           <h2>{data[0].title}</h2>

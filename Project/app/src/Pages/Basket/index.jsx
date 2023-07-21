@@ -8,7 +8,9 @@ import {
   addQuantityToProduct,
   deletQuantityToProduct,
 } from "../../redux/basketSlice";
-import { BasketProduct } from "../BasketComponents/BasketProduct";
+import { BasketProduct } from "../../components/BasketComponents/BasketProduct";
+import { OrderForm } from "../../components/BasketComponents/OrderForm";
+
 
 export const Basket = () => {
   const productsInBasket = useSelector((state) => state.basket.products);
@@ -17,22 +19,19 @@ export const Basket = () => {
 
   const deletProduct = (idEl) => {
     dispatch(deletPropductFromBasket(idEl)); //Такие повторения нормальны?
-    dispatch(countTotalPrice());
   };
 
   const upQuantity = (idEl) => {
     dispatch(addQuantityToProduct(idEl));
-    dispatch(countTotalPrice());
   };
 
   const downQuantity = (idEl) => {
     dispatch(deletQuantityToProduct(idEl));
-    dispatch(countTotalPrice());
   };
+  
   return (
     <div className={styles.wrapper}>
       <h2>Shopping cart</h2>
-
       <div className={styles.productsContainer}>
         <div className={styles.productsList}>
           <NavLink to="/propducts">
@@ -49,19 +48,7 @@ export const Basket = () => {
               />
             ))}
         </div>
-        <div className={styles.productOrder}>
-          {/* Вынести в отдельный компонент? */}
-          <form action="">
-            <h3>Order details</h3>
-            <span>Total</span>
-            <p>
-              {totalPrice}
-              <span className={styles.dollar}>$</span>
-            </p>
-            <input type="text" />
-            <button type="onSubmit">Order</button>
-          </form>
-        </div>
+        <OrderForm totalPrice={totalPrice} productsOrdered={productsInBasket}/>
       </div>
     </div>
   );

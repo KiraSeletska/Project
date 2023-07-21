@@ -1,6 +1,6 @@
 import styles from "./styles.module.css";
-import { useGetAllPropductsQuery } from "../../redux/apiSlice";
-import { baseUrl } from "../../redux/apiSlice";
+import { useGetAllPropductsQuery } from "../../redux/categoriesApi";
+import { baseUrl } from "../../redux/categoriesApi";
 import { Product } from "../Product";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -32,7 +32,7 @@ export const ShortSalesList = () => {
     event.preventDefault()
     const newProduct = { ...el, quantity: 1 };
     dispatch(addProductToBasket(newProduct));
-    dispatch(countTotalPrice());
+   
   }
 
 

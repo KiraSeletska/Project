@@ -1,7 +1,7 @@
 import styles from "./styles.module.css";
 import { useEffect, useState } from "react";
 
-export const Filter = ({ items, setNewData }) => {
+export const Filter = ({onChange}) => {
   /*
     const [checkbox, setCheckbox] = useState(false);
     const [from, setFrom] = useState(0);
@@ -53,42 +53,13 @@ export const Filter = ({ items, setNewData }) => {
   const [toPrice, setToPrice] = useState();
   const [sortOrder, setSortOrder] = useState();
   const [discountedOnly, setDiscountedOnly] = useState(false);
-  const [isChecked, setIsChecked] = useState(false);
 
-
-  useEffect(() => {
-    const filteredItems = isChecked
-      ? items
-          .filter((item) => item.discont_price !== null)
-          .filter((item) => {
-            return (
-              (!fromPrice ||
-                (item.discont_price || item.price) >= Number(fromPrice)) &&
-              (!toPrice ||
-                (item.discont_price || item.price) <= Number(toPrice))
-            );
-          })
-      : items.filter((item) => {
-          return (
-            (!fromPrice ||
-              (item.discont_price || item.price) >= Number(fromPrice)) &&
-            (!toPrice || (item.discont_price || item.price) <= Number(toPrice))
-          );
-        });
-
-    const sortedItems =
-      filteredItems &&
-      filteredItems.sort((a, b) => {
-        if (sortOrder === "asc") {
-          return a.price - b.price;
-        } else if (sortOrder === "desc") {
-          return b.price - a.price;
-        }
-        return 0;
-      });
-
-    setNewData(sortedItems);
-  }, [fromPrice, toPrice, sortOrder, isChecked, items]);
+  useEffect(()=>{
+    onChange({
+      fromPrice, toPrice, sortOrder, discountedOnly
+    })
+  }, [fromPrice, toPrice, sortOrder, discountedOnly, onChange])
+ 
 
   return (
     <div className={styles.sortContainer}>
@@ -112,7 +83,7 @@ export const Filter = ({ items, setNewData }) => {
         checked={discountedOnly}
         onChange={(e) => {
           setDiscountedOnly(e.target.checked);
-          setIsChecked(!isChecked);
+
         }}
       />
       <span className={styles.spanSorted}>Sorted</span>

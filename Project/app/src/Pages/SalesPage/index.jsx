@@ -1,35 +1,36 @@
 import styles from "./styles.module.css";
-import { useGetAllPropductsQuery } from "../../redux/apiSlice";
+import { useGetAllPropductsQuery } from "../../redux/categoriesApi";
 import { Product } from "../../components/Product";
-import { baseUrl } from "../../redux/apiSlice";
+import { baseUrl } from "../../redux/categoriesApi";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addProductToBasket } from "../../redux/basketSlice";
 import { countTotalPrice } from "../../redux/basketSlice";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Filter } from "../../components/Filter";
+import { ApplyFilter } from "../../util/ApplyFilter";
 
 export const SalesPage = () => {
   const { data } = useGetAllPropductsQuery();
   const dispatch = useDispatch();
   const [newData, setNewData] = useState();
-  console.log(data);
 
   const addToBascetHandler = (event, el) => {
-    //повтор!!!
     event.preventDefault();
-    const newProduct = { ...el, quantity: 1 };
+    const newProduct = { ...el, quantity: 1 };//вынести в слайс
     dispatch(addProductToBasket(newProduct));
-    dispatch(countTotalPrice());
+
   };
-  const getNewData = (arg) => {
-    setNewData(arg);
-  };
+
+  const onFilterChanged = useCallback((filterObj) => {
+    setNewData(ApplyFilter(data || [], filterObj))
+  }, [data])
+
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.productsWrapper}>
       <h2>Products with sale</h2>
-      <Filter items={data !== undefined ? data : []} setNewData={getNewData} />
-      <div className={styles.productsContainer}>
+      <Filter onChange={onFilterChanged}/>
+     
         {newData &&
           newData.map((el) =>
             el.discont_price ? (
@@ -47,7 +48,7 @@ export const SalesPage = () => {
               ""
             )
           )}
-      </div>
+    
     </div>
   );
 };

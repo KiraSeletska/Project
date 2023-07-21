@@ -1,6 +1,5 @@
 import styles from "./styles.module.css";
-import { useGetAllCategoriesQuery } from "../../redux/apiSlice";
-import { baseUrl } from "../../redux/apiSlice";
+import { useGetAllCategoriesQuery,baseUrl } from "../../redux/categoriesApi";
 import { Category } from "../Category";
 import { NavLink } from "react-router-dom";
 

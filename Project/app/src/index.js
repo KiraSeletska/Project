@@ -7,18 +7,13 @@ import { Categories } from "./Pages/Categories";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { ErrorPage } from "./Pages/ErrorPage";
-import { TEST } from "./components/TEST";
 import { MainPage } from "./Pages/MainPage";
 import { AllProducts } from "./Pages/AllProducts";
-import { Product } from "./components/Product";
-import { Basket } from "./components/Basket";
+import { Basket } from "./Pages/Basket";
 import { SalesPage } from "./Pages/SalesPage";
-import { PropductsByCategory } from "./components/PropductsByCategory";
+import { PropductsByCategory } from "./Pages/PropductsByCategory";
 import { SingleProductPage } from "./Pages/SingleProductPage";
 
-{
-  /*errorElement:  <ErrorPage />, */
-}
 const router = createBrowserRouter([
   {
     path: "/",
