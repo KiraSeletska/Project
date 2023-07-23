@@ -5,17 +5,21 @@ import { baseUrl } from "../../redux/categoriesApi";
 import { useDispatch } from "react-redux";
 import { addProductToBasket } from "../../redux/basketSlice";
 import { countTotalPrice } from "../../redux/basketSlice";
+import { AddToCardMessages } from "../../components/Messages/addToCardMesssage";
+import { useState } from "react";
+
 
 export const SingleProductPage = () => {
   const { id } = useParams();
   const { data, isLoading, error } = useGetOneProductByCategoryQuery(id);
   const dispatch = useDispatch();
-console.log(error)
+const [status, setStatus] = useState(false)
+
   const addToBascetHandler = (event, el) => {
-    //ПОВТОР!!
     event.preventDefault();
-   
     dispatch(addProductToBasket(el));
+    setStatus(true)
+    setTimeout(() => setStatus(false), 2000);
   };
 
   return (
@@ -56,6 +60,7 @@ console.log(error)
               >
                 To card
               </button>
+              <div className={styles.message}><AddToCardMessages status={status}/></div>
               <h6>Description</h6>
               <p className={styles.description}>{data[0].description}</p>
             </div>

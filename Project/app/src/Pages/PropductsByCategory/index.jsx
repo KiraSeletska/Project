@@ -20,8 +20,8 @@ export const PropductsByCategory = () => {
   const addToBascetHandler = (event, el) => {
     //Может ее вынести куда-то? А то она много где повторяется
     event.preventDefault();
-    const newProduct = { ...el, quantity: 1 };
-    dispatch(addProductToBasket(newProduct));
+   // const newProduct = { ...el, quantity: 1 };
+    dispatch(addProductToBasket(el));
 
   };
   const onFilterChanged = useCallback((filterObj) => {

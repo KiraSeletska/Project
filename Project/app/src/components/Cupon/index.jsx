@@ -1,34 +1,26 @@
 import styles from "./styles.module.css";
 import gnome from "../../images/gnome.svg";
 import { usePostPhoneNumberForDiscountMutation } from "../../redux/categoriesApi";
-import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
-
+import { useState } from "react";
+import { FormMessage } from "./formMessage";
+import { ValidInput } from "../ValidInput";
 export const Cupon = () => {
+  
   const [postNumberForDiscount, { isError, isLoading, isSuccess }] =
     usePostPhoneNumberForDiscountMutation();
 
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [valid, setValid] = useState(0); //1 - valid, 2 - not valid
-/*
-  useEffect(() => {
-    const rool = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
-    console.log(phoneNumber);
-    let valid = rool.test(phoneNumber);
-    console.log(valid);
-  }, [phoneNumber]);
-*/
+  const [valid, setValid] = useState(true); //1 - valid, 2 - not valid
 
   const sendPhoneNumber = () => {
     const rool = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
     if (rool.test(phoneNumber) === false) {
-      setValid(2);
-      console.log("The pnone number is not valid");
+      setValid(false);
+      setTimeout(() => setValid(true), 2000);
+          
     } else {
-      setValid(1);
+      setValid(true);
       postNumberForDiscount(phoneNumber);
-
-      console.log("I send phone namber");
     }
   };
 
@@ -46,25 +38,35 @@ export const Cupon = () => {
         {isLoading ? (
           <h3>Loading</h3>
         ) : isSuccess ? (
-          <h3>Send</h3>
+          <div className={styles.saccessSendPhoneNumber}>
+            <h3>
+            Your application has been sent. 
+            Wait for a message to the phone number: <span>{phoneNumber}</span>
+            </h3>
+          </div>
         ) : isError ? (
           <h3>ooops</h3>
         ) : (
-          <form
+          <form className={styles.form}
             onSubmit={(e) => {
               e.preventDefault();
             }}
           >
             <div className={styles.inputWrapper}>
-              <input
+            <input
                 type="tel"
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 className={styles.input}
                 placeholder="phone number"
                 maxLength={14}
                 minLength={4}
-              />
+                defaultValue={'+47'}
+          />
             </div>
+            <div className={styles.errorWindow}>
+            < FormMessage status={valid}/>
+            </div>
+  
             <button
               onClick={() => sendPhoneNumber()}
               className={styles.button}
@@ -74,9 +76,6 @@ export const Cupon = () => {
             </button>
           </form>
         )}
-      </div>
-      <div className={ valid === 2 ? styles.open : styles.close }>
-        Введите нормальный номер телефона, идиот!
       </div>
     </div>
   );

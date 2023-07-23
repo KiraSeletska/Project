@@ -1,63 +1,79 @@
-
 .sortContainer {
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
-  .productsWrapper input {
-    border-radius: 7px;
-    border: 1px solid #000;
-    padding-left: 10px;
-  }
-  .productsWrapper::placeholder {
-    color: #797979;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 20, 8px; /* 20.8px */
-    letter-spacing: 0.48px;
-    margin-left: 10px;
-  }
-  .sortContainer {
-  }
-  .sortContainer span {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: 26px; /* 26px */
-    letter-spacing: 0.6px;
-  }
-  .spanPrice {
-  }
-  .inputSort {
-    margin: 0 15px;
-    width: 103px;
-    height: 42px;
-  }
-  .inputSort::placeholder {
-    color: #acacac;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 20.8px; /* 20.8px */
-    letter-spacing: 0.48px;
-  }
-  .discSort {
-    margin: 0 40px;
-  }
-  .checkbox {
-    zoom: 3;
-  }
-  .spanSorted {
-    margin-left: 53px;
-  }
-  .inputSortByDefault {
-    margin-left: 42px;
-    width: 219px;
-    height: 40px;
-  }
-  .inputSortByDefault::placeholder {
-    color: #797979;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 20, 8px; /* 20.8px */
-    letter-spacing: 0.48px;
-  }
-  
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.productsWrapper input {
+  border-radius: 7px;
+  border: 1px solid #000;
+  padding-left: 10px;
+}
+.productsWrapper::placeholder {
+  color: #797979;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20, 8px; /* 20.8px */
+  letter-spacing: 0.48px;
+  margin-left: 10px;
+}
+.sortContainer {
+}
+.sortContainer span {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px; /* 26px */
+  letter-spacing: 0.6px;
+}
+.spanPrice {
+}
+.inputSort {
+  margin: 0 15px;
+  width: 103px;
+  height: 42px;
+}
+.inputSort::placeholder {
+  color: #acacac;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.8px; /* 20.8px */
+  letter-spacing: 0.48px;
+}
+.discSort {
+  margin: 0 40px;
+}
+.checkbox {
+  zoom: 3;
+}
+.spanSorted {
+  margin: 0 42px 0 68px;
+}
+.sortSelect {
+  width: 219px;
+  height: 40px;
+  border-radius: 7px;
+  border: 1px solid #000;
+  color: #797979;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20.8px; /* 20.8px */
+  letter-spacing: 0.48px;
+}
+
+.option {
+  min-height: 2.2em;
+
+}
+
+.inputSortByDefault {
+  margin-left: 42px;
+  width: 219px;
+  height: 40px;
+}
+.inputSortByDefault::placeholder {
+  color: #797979;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20, 8px; /* 20.8px */
+  letter-spacing: 0.48px;
+}

@@ -87,10 +87,10 @@ export const Filter = ({onChange}) => {
         }}
       />
       <span className={styles.spanSorted}>Sorted</span>
-      <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
-        <option value="default">by dafault</option>
-        <option value="asc">minimum price</option>
-        <option value="desc">maximum price</option>
+      <select className={styles.sortSelect} value={sortOrder} onChange={(e) => setSortOrder(e.target.value)}>
+        <option className={styles.option} value="default">by dafault</option>
+        <option className={styles.option} value="asc">minimum price</option>
+        <option className={styles.option} value="desc">maximum price</option>
       </select>
     </div>
   );

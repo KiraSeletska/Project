@@ -1,5 +1,6 @@
 import styles from "./product.module.css";
-
+import { AddToCardMessages } from "../Messages/addToCardMesssage";
+import { useState } from "react";
 export const Product = ({
   discont_price,
   image,
@@ -7,14 +8,19 @@ export const Product = ({
   id,
   title,
   addToBascetHandler,
+  buttonName
+
 }) => {
+  const [status, setStatus] = useState(false)
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.imgContainer}>
         <img src={image} alt="" />
         <button className={styles.addToCard} onClick={addToBascetHandler}>
-          Add to card
+          {buttonName}
         </button>
+ 
       </div>
       <div className={styles.priceContainer}>
         <p className={styles.price}>
@@ -30,6 +36,7 @@ export const Product = ({
         </span>
       </div>
       <p className={styles.title}>{title}</p>
+
     </div>
   );
 };

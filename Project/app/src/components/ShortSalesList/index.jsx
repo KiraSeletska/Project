@@ -14,6 +14,10 @@ export const ShortSalesList = () => {
   const { data } = useGetAllPropductsQuery();
   const [productsState, setProductsState] = useState(40);
 
+  const defButtonText = "Add to cart";
+  const actionButtonText = "Product added to cart"
+  const [btn, setBtn] = useState(defButtonText);
+
   const oneStep = 600;
   const dispatch = useDispatch()
   const stepPlus = () => {
@@ -30,8 +34,9 @@ export const ShortSalesList = () => {
 
   const addToBascetHandler = (event, el) => {
     event.preventDefault()
-    const newProduct = { ...el, quantity: 1 };
-    dispatch(addProductToBasket(newProduct));
+    dispatch(addProductToBasket(el));
+    setBtn(actionButtonText);
+    setTimeout(() => setBtn(defButtonText), 1000);
    
   }
 
@@ -59,6 +64,7 @@ export const ShortSalesList = () => {
                   image={baseUrl + el.image}
                   addToBascetHandler={(e)=>
                     addToBascetHandler(e, el)}
+                    buttonName={btn}
                 /> </NavLink>
               ) : (
                 ""

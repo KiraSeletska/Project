@@ -16,6 +16,6 @@
 }
 .productsContainer {
   display: grid;
-  grid-template-columns: 57% 30%;
+  grid-template-columns: 2fr 1fr;
   gap: 60px;
 }

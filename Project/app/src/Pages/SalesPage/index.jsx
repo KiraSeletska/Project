@@ -15,11 +15,15 @@ export const SalesPage = () => {
   const dispatch = useDispatch();
   const [newData, setNewData] = useState();
 
+  const defButtonText = "Add to cart";
+  const actionButtonText = "Product added to cart"
+  const [btn, setBtn] = useState(defButtonText);
+
   const addToBascetHandler = (event, el) => {
     event.preventDefault();
-    const newProduct = { ...el, quantity: 1 };//вынести в слайс
-    dispatch(addProductToBasket(newProduct));
-
+    dispatch(addProductToBasket(el));
+ setBtn(actionButtonText);
+    setTimeout(() => setBtn(defButtonText), 1000);
   };
 
   const onFilterChanged = useCallback((filterObj) => {
@@ -30,7 +34,6 @@ export const SalesPage = () => {
     <div className={styles.productsWrapper}>
       <h2>Products with sale</h2>
       <Filter onChange={onFilterChanged}/>
-     
         {newData &&
           newData.map((el) =>
             el.discont_price ? (
@@ -42,6 +45,7 @@ export const SalesPage = () => {
                   title={el.title}
                   image={baseUrl + el.image}
                   addToBascetHandler={(e) => addToBascetHandler(e, el)}
+                  buttonName={btn}
                 />{" "}
               </NavLink>
             ) : (
