@@ -33,7 +33,7 @@ export const SalesPage = () => {
   return (
     <div className={styles.productsWrapper}>
       <h2>Products with sale</h2>
-      <Filter onChange={onFilterChanged}/>
+      <Filter onChange={onFilterChanged} hideDiscountFilter/>
         {newData &&
           newData.map((el) =>
             el.discont_price ? (

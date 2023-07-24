@@ -7,8 +7,8 @@ export const OrderForm = ({ totalPrice, productsOrdered }) => {
   const [postNumberForOrder, { isError, isLoading, isSuccess, error }] =
     usePostPhoneNumberForOrderMutation();
   const [phoneNumber, setPhoneNumber] = useState();
-  const [valid, setValid] = useState(true);
-const [basketState, setBasketState] = useState(false)
+  const [emptyBasket, setEmptyBasket] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   const order = {
     products: productsOrdered,
@@ -16,25 +16,23 @@ const [basketState, setBasketState] = useState(false)
   };
 
   const sendOrder = () => {
-    
-    if(productsOrdered.length === 0) {
-      setBasketState(true)
-      setTimeout(()=>setBasketState(false),2000)
-      return
+    if (productsOrdered.length === 0) {
+      setEmptyBasket(true);
+      setTimeout(() => setEmptyBasket(false), 2000);
+      return;
     }
-    const rool = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
-    if (rool.test(phoneNumber) === false) {
-      setValid(false);
-      setTimeout(() => setValid(true), 2000);
+
+    const phoneNumberRestrictions = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
+    if (phoneNumberRestrictions.test(phoneNumber) === false) {
+      setShowError(true);
+      setTimeout(() => setShowError(false), 2000);
     } else {
-      setValid(true);
       postNumberForOrder(order);
     }
   };
 
   const savePhoneNumber = (e) => {
     setPhoneNumber(e);
-    console.log(phoneNumber);
   };
 
   return (
@@ -60,21 +58,22 @@ const [basketState, setBasketState] = useState(false)
             <span className={styles.dollar}>$</span>
           </p>
           <input
-             type="tel"
+            type="tel"
             onChange={(e) => savePhoneNumber(e.target.value)}
             placeholder="phone number"
             maxLength={14}
             minLength={4}
-          
           />
           <div className={styles.errorMassage}>
-            <FormMessage status={valid} />
+            <FormMessage status={showError} />
           </div>
 
           <button onClick={() => sendOrder()} type="submit">
             Order
           </button>
-          <p className={basketState ? styles.empty : styles.close}>Your basket is empty</p>
+          <p className={emptyBasket ? styles.empty : styles.close}>
+            Your basket is empty
+          </p>
         </form>
       )}
     </div>

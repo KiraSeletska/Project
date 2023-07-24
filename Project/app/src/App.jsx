@@ -13,11 +13,6 @@ function App() {
        
           <Header/>
           <Outlet/>
-        
-{/*  <MainPage/>
-<Sales/>
-<SmallCataloge/>
-  <CuponForm/>*/}
   <Contact/>
     </div>
   );

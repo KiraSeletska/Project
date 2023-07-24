@@ -1,9 +1,9 @@
 import styles from "./basketProduct.module.css";
 import { baseUrl } from "../../redux/categoriesApi";
 import delet from "../../images/Close.svg";
-import Plus from "../../images/Plus.svg";
-import Minus from "../../images/Minus.svg";
-
+import plus from "../../images/Plus.svg";
+import minus from "../../images/Minus.svg";
+//переименовтаь и добавиь / выбрать index
 export const BasketProduct = ({
   id,
   image,
@@ -34,11 +34,11 @@ export const BasketProduct = ({
       </div>
       <div className={styles.qualityBattons}>
         <button onClick={() => downQuantity(id)}>
-          <img src={Minus} alt="" />
+          <img src={minus} alt="" />
         </button>
         <p>{quantity}</p>
         <button onClick={() => upQuantity(id)}>
-          <img src={Plus} alt="" />
+          <img src={plus} alt="" />
         </button>
       </div>
       <button className={styles.delet} onClick={() => deletProduct(id)}>

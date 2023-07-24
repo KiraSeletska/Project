@@ -15,15 +15,10 @@ export const AllProducts = () => {
 
   const [newData, setNewData] = useState();
 
-  const defButtonText = "Add to cart";
-  const actionButtonText = "Product added to cart"
-  const [btn, setBtn] = useState(defButtonText);
-
   const addToBascetHandler = (event, el) => {
     event.preventDefault();
     dispatch(addProductToBasket(el));
-    setBtn(actionButtonText);
-    setTimeout(() => setBtn(defButtonText), 1000);
+
   };
 
   const onFilterChanged = useCallback(
@@ -47,7 +42,6 @@ export const AllProducts = () => {
               discont_price={el.discont_price}
               title={el.title}
               addToBascetHandler={(e) => addToBascetHandler(e, el)}
-              buttonName={btn}
             />
           </NavLink>
         ))}

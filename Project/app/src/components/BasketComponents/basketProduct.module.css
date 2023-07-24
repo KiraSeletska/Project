@@ -28,17 +28,16 @@
     padding: 45px 0;
     display: grid;
     grid-template-areas:
-      "img des des close"
+      "img des . close"
       "img . price ."
       "img battons . .";
-    grid-template-columns: auto 2fr 1fr;
+    grid-template-columns: auto 2fr 1fr 25px;
     grid-template-rows: auto;
     position: relative;
   }
-  /*
-  .productContainer:not(:nth-child(1)) {
-      border: none;
-  }*/
+  .productContainer + .productContainer {
+    border-top: none;
+  }
   .imgContainer {
     grid-area: img;
     margin-right: 29px;

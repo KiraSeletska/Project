@@ -19,7 +19,8 @@
   line-height: 26.4px; /* 23.4px */
   border-radius: 21px;
   border: 2px solid #393;
-  background: #f1fff1;
+background: #f1fff1;
+  /*background: #ff32a1;*/
   z-index: 111;
   position: absolute;
   cursor: pointer;
@@ -27,17 +28,18 @@
   left: 10px;
  opacity: 0;
   transition: opacity .3s;
+
 }
 .addToCard:hover{
   opacity: 1;
   transition: opacity .3s;
 }
-
+.addToCard:active{
+  transform: scale(0.95);
+}
 .wrapper img {
- /* position: absolute;*/
   top: 50%;
   left: 50%;
- /* transform: translate(-50%, -50%);*/
   width: 300px;
   height: 300px;
   object-fit: cover;

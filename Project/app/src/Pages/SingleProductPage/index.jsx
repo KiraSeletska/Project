@@ -7,19 +7,24 @@ import { addProductToBasket } from "../../redux/basketSlice";
 import { countTotalPrice } from "../../redux/basketSlice";
 import { AddToCardMessages } from "../../components/Messages/addToCardMesssage";
 import { useState } from "react";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faCartShopping}from '@fortawesome/free-solid-svg-icons'
 
 export const SingleProductPage = () => {
   const { id } = useParams();
   const { data, isLoading, error } = useGetOneProductByCategoryQuery(id);
   const dispatch = useDispatch();
+
 const [status, setStatus] = useState(false)
+
+const defButtonText = 'To card'
+const basketImage =<FontAwesomeIcon icon={faCartShopping} bounce style={{color: "#ffffff",}}/>
 
   const addToBascetHandler = (event, el) => {
     event.preventDefault();
     dispatch(addProductToBasket(el));
     setStatus(true)
-    setTimeout(() => setStatus(false), 2000);
+    setTimeout(() => setStatus(false), 1000);
   };
 
   return (
@@ -55,12 +60,11 @@ const [status, setStatus] = useState(false)
                 </span>
               </div>
               <button
-                className={styles.btnTpCard}
+                className={styles.btnToCart}
                 onClick={(event) => addToBascetHandler(event, data[0])}
               >
-                To card
+               {!status ? defButtonText : basketImage} 
               </button>
-              <div className={styles.message}><AddToCardMessages status={status}/></div>
               <h6>Description</h6>
               <p className={styles.description}>{data[0].description}</p>
             </div>

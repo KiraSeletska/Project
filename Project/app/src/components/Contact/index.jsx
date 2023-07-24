@@ -34,7 +34,9 @@ export const Contact = () => {
       </div>
         </div>
   <div className={styles.map}>
-    <iframe className={styles.googleMap} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.409222750825!2d13.37285601580702!3d52.50793287981184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851d00f714303%3A0xb7b4fcea44396e2d!2sAIT%20TR%20GmbH!5e0!3m2!1sru!2sde!4v1689597113339!5m2!1sru!2sde" ></iframe></div>
+    <iframe className={styles.googleMap} 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.409222750825!2d13.37285601580702!3d52.50793287981184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851d00f714303%3A0xb7b4fcea44396e2d!2sAIT%20TR%20GmbH!5e0!3m2!1sru!2sde!4v1689597113339!5m2!1sru!2sde" 
+    ></iframe></div>
     </div>
   );
 };

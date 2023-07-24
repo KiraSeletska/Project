@@ -10,17 +10,18 @@ export const Cupon = () => {
     usePostPhoneNumberForDiscountMutation();
 
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [valid, setValid] = useState(true); //1 - valid, 2 - not valid
+  const [valid, setValid] = useState(true); 
+const [showError, setShowError] = useState(false); 
 
   const sendPhoneNumber = () => {
-    const rool = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
-    if (rool.test(phoneNumber) === false) {
-      setValid(false);
-      setTimeout(() => setValid(true), 2000);
-          
+    const phoneNumberRestrictions = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
+    if (phoneNumberRestrictions.test(phoneNumber) === false) {
+      setShowError(true);
+      setValid(false)
+      setTimeout(() => setShowError(false), 2000);
     } else {
-      setValid(true);
       postNumberForDiscount(phoneNumber);
+      setValid(true)
     }
   };
 
@@ -64,7 +65,7 @@ export const Cupon = () => {
           />
             </div>
             <div className={styles.errorWindow}>
-            < FormMessage status={valid}/>
+            <FormMessage status={showError}/>
             </div>
   
             <button

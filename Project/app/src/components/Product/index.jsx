@@ -1,26 +1,37 @@
 import styles from "./product.module.css";
 import { AddToCardMessages } from "../Messages/addToCardMesssage";
 import { useState } from "react";
+import { basketImage } from '../../Pages/SingleProductPage'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faCartShopping}from '@fortawesome/free-solid-svg-icons'
+
 export const Product = ({
   discont_price,
   image,
   price,
   id,
   title,
-  addToBascetHandler,
-  buttonName
-
+  addToBascetHandler
 }) => {
-  const [status, setStatus] = useState(false)
+
+  const basketImage =<FontAwesomeIcon icon={faCartShopping} bounce style={{color: "#393",}} />
+  const defButtonText = "Add to cart";
+  const [btnName, setBtnName] = useState(defButtonText)
+
+  const onButtonClick = (event) => {
+    addToBascetHandler(event);
+    setBtnName( basketImage );
+    setTimeout(() => setBtnName(defButtonText), 1000);
+  }
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.imgContainer}>
         <img src={image} alt="" />
-        <button className={styles.addToCard} onClick={addToBascetHandler}>
-          {buttonName}
+        <button id={id} className={styles.addToCard} 
+        onClick={onButtonClick}>
+          {btnName}
         </button>
- 
       </div>
       <div className={styles.priceContainer}>
         <p className={styles.price}>
