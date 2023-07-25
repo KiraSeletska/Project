@@ -32,10 +32,13 @@ export const Header = () => {
           <li>
             <NavLink to="/sales">All sales</NavLink>
           </li>
-          <li>
-            <NavLink to="/basket"><img src={shoppingBag} alt="Basket" /></NavLink>
-          </li>
         </ul>
+        <div className={styles.totalInBasket}>
+        <NavLink to="/basket"><img src={shoppingBag} alt="Basket" />
+        <p>{ totalProducts.length}</p>
+        </NavLink>
+   
+          </div>
       </nav>
     </header>
   );

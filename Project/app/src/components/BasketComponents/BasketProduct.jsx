@@ -15,6 +15,8 @@ export const BasketProduct = ({
   upQuantity,
   deletProduct,
 }) => {
+
+
   return (
     <div className={styles.productContainer} key={id}>
       <div className={styles.imgContainer}>
