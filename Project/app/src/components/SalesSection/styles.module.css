@@ -8,23 +8,17 @@
 .textContainer {
   font-size: 80px;
   color: #fff;
-  font-style: normal;
   line-height: 130%;
-  margin: 130px 0 140px;
-  margin-left: 50px;
+  margin: 130px 0 139px 50px;
 }
 
 .textContainer span {
   font-size: 63px;
 }
 
-.btnContainer {
-  margin-top: 60px;
-  display: flex;
-  gap: 80px;
-}
 
 .btn {
+  margin-top: 60px;
   font-size: 25px;
   font-weight: 700;
   width: 155px;

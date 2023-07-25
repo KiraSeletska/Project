@@ -1,13 +1,7 @@
 .wrapper {
+  margin: 49px 30px 45px 30px;
 }
-.wrapper h2 {
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 52px;
-  letter-spacing: 1.2px;
-  margin-top: 50px;
-  margin-left: 30px;
-}
+
 .productsWrapper {
   margin-top: 21px;
   overflow: hidden;

@@ -43,10 +43,12 @@
     margin-right: 29px;
     width: 200px;
     height: 200px;
+background: #FBFBFB;
   }
   .imgContainer img {
     width: 200px;
-    height: 200px;
+    height: 167px;
+    border-radius: 12.679px;
   }
   .titel {
     color: #3a3a3a;

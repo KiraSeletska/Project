@@ -10,11 +10,10 @@ export const SalesSection = () => {
           Sale <br />
           <span>New season</span>
         </h1>
-        <div className={styles.btnContainer}>
           <NavLink to="/sales">
             <button className={styles.btn}>Sale</button>
           </NavLink>
-        </div>
+    
       </div>
 
       <div className={styles.imgContainer}>

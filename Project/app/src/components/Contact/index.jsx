@@ -7,7 +7,7 @@ export const Contact = () => {
     <div className={styles.wrapper}>
         <div className={styles.infoWrapper}>
         <div className={styles.conectWrapper}>
-        <h3>Contact</h3>
+        <h2>Contact</h2>
         <p className={styles.phone}>+49 999 999 99 99</p>
         <div className={styles.iconsContainer}>
           <div className={styles.iconContainer}>

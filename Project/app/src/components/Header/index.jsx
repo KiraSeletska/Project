@@ -7,9 +7,9 @@ import { useSelector } from 'react-redux'
 export const Header = () => {
 
   const totalProducts = useSelector((state) => state.basket.products)
-
+  const totalProductsQ = useSelector((state) => state.basket)
   const showBasket = () => {
-    console.log(totalProducts)
+    console.log(totalProductsQ)
   }
 
   return (

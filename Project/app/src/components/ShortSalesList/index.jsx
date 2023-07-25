@@ -35,21 +35,6 @@ export const ShortSalesList = () => {
     setProductsState(step);
   };
 
-  /*
-  const oneStep = 600;
-
-  const stepPlus = () => {
-    if (productsState < -2360) return;
-    const step = productsState - oneStep;
-    setProductsState(step);
-    console.log(productsState)
-  };
-  const stepMin = () => {
-    if (productsState >=40) return;
-    const step = productsState + oneStep;
-    setProductsState(step);
-  };
-*/
   const addToBascetHandler = (event, el) => {
     event.preventDefault();
     dispatch(addProductToBasket(el));

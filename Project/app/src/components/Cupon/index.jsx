@@ -30,8 +30,8 @@ const [showError, setShowError] = useState(false);
       <div className={styles.imgContainer}>
         <img className={styles.image} src={gnome} alt="gnome" />
       </div>
-      <div className={styles.form}>
-        <div className={styles.text}>
+      <div className={styles.formWrapper}>
+        <div className={styles.textWrapper}>
           <span>5% off </span>
           <br />
           on the first order

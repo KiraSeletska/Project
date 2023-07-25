@@ -3,7 +3,7 @@ import { usePostPhoneNumberForOrderMutation } from "../../redux/categoriesApi";
 import { useState } from "react";
 import { FormMessage } from "../Cupon/formMessage";
 
-export const OrderForm = ({ totalPrice, productsOrdered }) => {
+export const OrderForm = ({ totalPrice, productsOrdered, userSaving }) => {
   const [postNumberForOrder, { isError, isLoading, isSuccess, error }] =
     usePostPhoneNumberForOrderMutation();
   const [phoneNumber, setPhoneNumber] = useState();
@@ -52,11 +52,16 @@ export const OrderForm = ({ totalPrice, productsOrdered }) => {
       ) : (
         <form action="" onSubmit={(e) => e.preventDefault()}>
           <h3>Order details</h3>
-          <span>Total</span>
-          <p>
+          <div className={styles.priceContainer}>
+          <h6>Total</h6>
+          <p className={styles.totalPrice}>
             {totalPrice}
             <span className={styles.dollar}>$</span>
           </p>
+        
+          </div>
+    
+          <p className={styles.savingInfo}>Your savings: {userSaving}$ </p>
           <input
             type="tel"
             onChange={(e) => savePhoneNumber(e.target.value)}

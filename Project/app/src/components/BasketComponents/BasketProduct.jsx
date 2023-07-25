@@ -25,9 +25,9 @@ export const BasketProduct = ({
       <p className={styles.title}>{title}</p>
       <div className={styles.pricesContainer}>
         <p className={styles.price}>
-          {discont_price
-            ? discont_price * quantity
-            : price * quantity}
+          {((discont_price
+            ? discont_price
+            : price) * quantity).toFixed(2)}
           <span>$</span>
         </p>
         <span className={styles.discount_price}>

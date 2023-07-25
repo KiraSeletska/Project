@@ -1,12 +1,13 @@
 .wrapper {
-  margin: 32px;
+  margin: 48px 32px 38px;
 }
+/*
 .wrapper h3 {
   font-size: 40px;
   font-weight: 700;
-  line-height: 52px; /* 52px */
+  line-height: 52px; 
   margin-bottom: 25px;
-}
+}*/
 .infoWrapper {
   display: flex;
   gap: 162px;

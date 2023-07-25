@@ -8,7 +8,7 @@ export const SmallCataloge = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.container}>
+      <div className={styles.headContainer}>
       <h2>Catalog</h2>
       <button><NavLink to="/categories">All cataloges</NavLink></button>
       </div>
