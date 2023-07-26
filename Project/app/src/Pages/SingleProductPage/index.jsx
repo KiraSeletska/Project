@@ -9,6 +9,7 @@ import { AddToCardMessages } from "../../components/Messages/addToCardMesssage";
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faCartShopping}from '@fortawesome/free-solid-svg-icons'
+import { ProductQuantity } from "../../components/ProductQuantity";
 
 export const SingleProductPage = () => {
   const { id } = useParams();
@@ -65,6 +66,7 @@ const basketImage =<FontAwesomeIcon icon={faCartShopping} bounce style={{color: 
               >
                {!status ? defButtonText : basketImage} 
               </button>
+              <ProductQuantity id={data[0].id}/>
               <h6>Description</h6>
               <p className={styles.description}>{data[0].description}</p>
             </div>

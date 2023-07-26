@@ -3,6 +3,7 @@ import Back from "../../images/Back.svg";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { BasketProduct } from './BasketProduct';
+import { ClearBasketButton } from "../ClearBasketButton";
 import {
     countTotalPrice,
     deletPropductFromBasket,
@@ -31,6 +32,7 @@ export const BasketConstructor = () =>{
       
         return (
               <div className={styles.productsContainer}>
+                 
                 <div className={styles.productsList}>
                 <NavLink to="/propducts">
                     Back to the store <img src={Back} alt="" />

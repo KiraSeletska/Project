@@ -2,7 +2,7 @@ import styles from "./orderForm.module.css";
 import { usePostPhoneNumberForOrderMutation } from "../../redux/categoriesApi";
 import { useState } from "react";
 import { FormMessage } from "../Cupon/formMessage";
-import { ClearBasketButton } from "../ClearBasketButton";
+
 export const OrderForm = ({ totalPrice, productsOrdered, userSaving }) => {
   const [postNumberForOrder, { isError, isLoading, isSuccess, error }] =
     usePostPhoneNumberForOrderMutation();
@@ -81,7 +81,7 @@ export const OrderForm = ({ totalPrice, productsOrdered, userSaving }) => {
           </p>
         </form>
       )}
-      <ClearBasketButton/>
+    
     </div>
   );
 };
