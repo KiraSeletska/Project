@@ -1,73 +1,12 @@
 .productsWrapper {
   display: flex;
-    flex-wrap: wrap;
-    width: auto;
-    margin: 0 30px;
-    gap: 34px;
+  flex-wrap: wrap;
+  width: auto;
+  margin: 0 30px;
+  gap: 34px;
 }
 
-.productsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 30px;
-    gap: 34px;
-  }
-  
-  .productsWrapper  h2 {
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 52px; /* 52px */
-  letter-spacing: 1.2px;
+.productsWrapper h2 {
   margin-bottom: 91px;
 }
-.productsWrapper  input {
-  border-radius: 7px;
-  border: 1px solid #000;
-  padding-left: 10px;
-}
-.productsWrapper::placeholder {
-  color: #797979;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20, 8px; /* 20.8px */
-  letter-spacing: 0.48px;
-  margin-left: 10px;
-}
-.sortContainer {
-}
-.sortContainer span {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 26px; /* 26px */
-  letter-spacing: 0.6px;
-}
-.spanPrice {
-}
-.inputSort {
-  margin: 0 15px;
-  width: 103px;
-  height: 42px;
-}
-.inputSort::placeholder {
-  color: #acacac;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20.8px; /* 20.8px */
-  letter-spacing: 0.48px;
-}
 
-.spanSorted {
-  margin-left: 53px;
-}
-.inputSortByDefault {
-  margin-left: 42px;
-  width: 219px;
-  height: 40px;
-}
-.inputSortByDefault::placeholder {
-  color: #797979;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20, 8px; /* 20.8px */
-  letter-spacing: 0.48px;
-}

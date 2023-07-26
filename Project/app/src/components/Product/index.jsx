@@ -1,5 +1,6 @@
 import styles from "./product.module.css";
 import { AddButtonForCatalogies } from "../AddButtonForCatalogies";
+import { useSelector } from 'react-redux'
 
 export const Product = ({
   discont_price,
@@ -7,8 +8,11 @@ export const Product = ({
   price,
   id,
   title,
+  quantity,
   addToBascetHandler
 }) => {
+
+  const totalProducts = useSelector((state) => state.basket.products)
 
   return (
     <div className={styles.wrapper}>
@@ -31,7 +35,8 @@ export const Product = ({
         </span>
       </div>
       <p className={styles.title}>{title}</p>
-
+      <p className={styles.inBascetCount}>In basket: {quantity}</p> 
+{/*quantity ? <p className={styles.inBascetCount}>In basket: {quantity}</p> : ''*/}
     </div>
   );
 };

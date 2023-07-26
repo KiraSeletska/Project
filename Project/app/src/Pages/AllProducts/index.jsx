@@ -18,7 +18,6 @@ export const AllProducts = () => {
   const addToBascetHandler = (event, el) => {
     event.preventDefault();
     dispatch(addProductToBasket(el));
-
   };
 
   const onFilterChanged = useCallback(
@@ -41,6 +40,7 @@ export const AllProducts = () => {
               price={el.price}
               discont_price={el.discont_price}
               title={el.title}
+              quantity={el.quantity}
               addToBascetHandler={(e) => addToBascetHandler(e, el)}
             />
           </NavLink>

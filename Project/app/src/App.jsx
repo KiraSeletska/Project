@@ -3,7 +3,6 @@ import { Header } from "./components/Header";
 import { Sales } from "./components/SalesSection";
 import { Outlet } from "react-router-dom";
 import { SmallCataloge } from "./components/SmallCatalog";
-import { CuponForm } from "./components/CuponForm";
 import { Contact } from "./components/Contact";
 import { MainPage } from "./Pages/MainPage";
 

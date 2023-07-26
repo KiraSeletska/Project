@@ -93,11 +93,12 @@
   margin: 40px 0 0;
   cursor: pointer;
 }
-.btnTpCard:hover {
-  /*transform: scale(1.1);*/
+/*
+.btnToCart:hover {
+  transform: scale(1.1);
  
-}
-.btnTpCard:active {
+}*/
+.btnToCart:active {
 background-color: #393;
 transform: scale(0.95);
 }

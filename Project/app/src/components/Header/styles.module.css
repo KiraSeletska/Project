@@ -50,7 +50,7 @@
   height: 32px;
 }
 .stateBtn{
-  display: none;
+  /*display: none;*/
 }
 .totalInBasket{
   display: flex;

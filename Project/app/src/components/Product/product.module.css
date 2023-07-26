@@ -74,6 +74,7 @@ background: #f1fff1;
 }
 .title {
   width: 300px;
+  height: 42px;
   word-wrap: break-word;
   margin-left: 7px;
   color: #3a3a3a;
@@ -81,4 +82,8 @@ background: #f1fff1;
   font-weight: 500;
   line-height: 20.8px; /* 20.8px */
   letter-spacing: 0.48px;
+}
+.inBascetCount{
+  text-align: end;
+  font-size: 12px;
 }

@@ -2,53 +2,7 @@ import styles from "./styles.module.css";
 import { useEffect, useState } from "react";
 
 export const Filter = ({ onChange, hideDiscountFilter = false }) => {
-  /*
-    const [checkbox, setCheckbox] = useState(false);
-    const [from, setFrom] = useState(0);
-    const [to, setTo] = useState(0);
-    const [select, setSelect] = useState("default");
 
-    let newData = data && [...data];
-
-    const changeCheckbox = () => {
-        setCheckbox(!checkbox);
-        console.log(checkbox);
-      };
-    
-      const changeFrom = (e) => {
-        e ? setFrom(e) : setFrom(0);
-        console.log(from);
-      };
-      const changeTo = (e) => {
-        e ? setTo(e) : setTo(0);
-        console.log(to);
-      };
-    
-      const changeSelect = (e) => {
-        setSelect(e);
-        console.log(select);
-        console.log(newData)
-      };
-  
-      
-  const show = () => {
-    console.log(select);
-    console.log(newData)
-  };
-
-
-  const filtredState = () => {
-    if (checkbox) return newData.filter((el) => el.discont_price);
-    if (from !== 0 && to !== 0)return newData.filter((el) => (el.price > from) & (el.price < to));
-    if (from !== 0) return newData.filter((el) => el.price > from);
-    if (to !== 0) return newData.filter((el) => el.price < to);
-    
-    if(select === "min") return newData.sort((a,b) => a.price - b.price)
-    if(select === "max") return newData.sort((a,b) => b.price - a.price)
-
-    return newData;
-  };
-    */
   const [fromPrice, setFromPrice] = useState();
   const [toPrice, setToPrice] = useState();
   const [sortOrder, setSortOrder] = useState();

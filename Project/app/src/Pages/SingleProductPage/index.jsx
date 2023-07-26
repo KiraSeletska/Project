@@ -17,7 +17,7 @@ export const SingleProductPage = () => {
 
 const [status, setStatus] = useState(false)
 
-const defButtonText = 'To card'
+const defButtonText = 'To cart'
 const basketImage =<FontAwesomeIcon icon={faCartShopping} bounce style={{color: "#ffffff",}}/>
 
   const addToBascetHandler = (event, el) => {

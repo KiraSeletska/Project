@@ -19,7 +19,6 @@ export const ShortSalesList = () => {
   const pading = 40;
   const oneObg = 350;
   const ribbon = data && data.filter((el) => el.discont_price).length;
-  console.log(ribbon)
   const oneStep = oneObg * 3;
   const ribbonLength = (ribbon * oneObg - oneStep * 2) * -1;
 
@@ -27,7 +26,7 @@ export const ShortSalesList = () => {
     if (productsState < ribbonLength) return;
     const step = productsState - oneStep;
     setProductsState(step);
-    console.log(productsState);
+
   };
   const stepMin = () => {
     if (productsState >= pading) return;

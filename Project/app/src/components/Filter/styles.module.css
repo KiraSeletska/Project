@@ -1,14 +1,15 @@
 .sortContainer {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
-.productsWrapper input {
+.sortContainer input {
   border-radius: 7px;
   border: 1px solid #000;
   padding-left: 10px;
 }
-.productsWrapper::placeholder {
+.sortContainer::placeholder {
   color: #797979;
   font-size: 16px;
   font-weight: 500;
@@ -16,15 +17,11 @@
   letter-spacing: 0.48px;
   margin-left: 10px;
 }
-.sortContainer {
-}
 .sortContainer span {
   font-size: 20px;
   font-weight: 600;
   line-height: 26px; /* 26px */
   letter-spacing: 0.6px;
-}
-.spanPrice {
 }
 .inputSort {
   margin: 0 15px;

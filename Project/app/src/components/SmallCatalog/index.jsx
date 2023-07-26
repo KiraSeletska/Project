@@ -10,7 +10,7 @@ export const SmallCataloge = () => {
     <div className={styles.wrapper}>
       <div className={styles.headContainer}>
       <h2>Catalog</h2>
-      <button><NavLink to="/categories">All cataloges</NavLink></button>
+      <button><NavLink to="/categories">All categories</NavLink></button>
       </div>
       <div className={styles.categoriesWrapper}>
         {data &&

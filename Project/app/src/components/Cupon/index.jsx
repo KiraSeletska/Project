@@ -73,7 +73,7 @@ const [showError, setShowError] = useState(false);
               className={styles.button}
               type="submit"
             >
-              Cat a discount
+              Get a discount
             </button>
           </form>
         )}

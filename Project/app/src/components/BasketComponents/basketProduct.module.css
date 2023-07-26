@@ -19,19 +19,17 @@
     grid-template-columns: 57% 30%;
     gap: 60px;
   }
-  .productsList {
-  }
-  
+ 
   .productContainer {
     border-bottom: 1px solid #a7a7a7;
     border-top: 1px solid #a7a7a7;
     padding: 45px 0;
     display: grid;
     grid-template-areas:
-      "img des . close"
-      "img . price ."
-      "img battons . .";
-    grid-template-columns: auto 2fr 1fr 25px;
+      "img des . . close"
+      "img . price discount ."
+      "img battons . . .";
+    grid-template-columns: auto 2fr 1fr 1fr 25px;
     grid-template-rows: auto;
     position: relative;
   }
@@ -58,14 +56,16 @@ background: #FBFBFB;
     letter-spacing: 0.54px;
     grid-area: des;
   }
+  /*
   .pricesContainer {
     grid-area: price;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 70px;
-  }
+  }*/
   .price {
+    grid-area: price;
     font-size: 40px;
     font-weight: 600;
     line-height: 52px; /* 52px */
@@ -78,6 +78,7 @@ background: #FBFBFB;
     letter-spacing: 0.6px;
   }
   .discount_price {
+    grid-area: discount;
     color: #8b8b8b;
     font-size: 20px;
     font-style: normal;
@@ -85,6 +86,7 @@ background: #FBFBFB;
     line-height: 26px; /* 26px */
     letter-spacing: 0.6px;
     text-decoration: line-through;
+   
   }
   .qualityBattons {
     display: flex;
