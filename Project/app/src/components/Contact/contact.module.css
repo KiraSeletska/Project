@@ -1,13 +1,8 @@
 .wrapper {
-  margin: 48px 32px 38px;
+  margin: 0 32px 38px;
+  padding-top: 48px;
 }
-/*
-.wrapper h3 {
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 52px; 
-  margin-bottom: 25px;
-}*/
+
 .infoWrapper {
   display: flex;
   gap: 162px;

@@ -1,12 +1,14 @@
+.wrapper{
+  margin: 0 30px 27px;
+}
+
+.wrapper h2 {
+  margin-bottom: 91px;
+}
+
 .productsWrapper {
   display: flex;
   flex-wrap: wrap;
   width: auto;
-  margin: 0 30px;
   gap: 34px;
 }
-
-.productsWrapper h2 {
-  margin-bottom: 91px;
-}
-

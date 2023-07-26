@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { categoriesApi } from "./categoriesApi";
-import { useEffect } from "react";
 /*
 const defaultState = {
   products: [],
@@ -14,7 +12,7 @@ const write = (keyLS, arg) => {
   localStorage.setItem(keyLS, JSON.stringify(arg));
 };
 
-const read = (arg, defaultData = '') => {
+const read = (arg, defaultData = "") => {
   const data = localStorage.getItem(arg);
   const parsedData = data ? JSON.parse(data) : defaultData;
   return parsedData;
@@ -44,12 +42,12 @@ const calculateAllTotals = (state) => {
   };
 };
 
-const productsFromStorage = read('products', [])
+const productsFromStorage = read("products", []);
 
 const initialState = {
   products: productsFromStorage,
-  ...calculateAllTotals({products: productsFromStorage})
-}
+  ...calculateAllTotals({ products: productsFromStorage }),
+};
 
 export const basketSlice = createSlice({
   name: "basket",
@@ -60,20 +58,25 @@ export const basketSlice = createSlice({
         state.products.find(({ id }) => id === action.payload.id) === undefined
           ? [...state.products, { ...action.payload, quantity: 1 }]
           : [
-              ...state.products.map((el) => ({
-                ...el,
-                quantity: el.quantity + 1,
-              })),
+              ...state.products.map((el) =>
+                el.id === action.payload.id
+                  ? { ...el, quantity: el.quantity + 1 }
+                  : el
+              ),
             ];
-      Object.assign(state, calculateAllTotals(state))
+      Object.assign(state, calculateAllTotals(state));
       write("products", state.products);
     },
-
+    clearBasket: (state) => {
+      state.products = [];
+      Object.assign(state, calculateAllTotals(state));
+      write("products", state.products);
+    },
     deletPropductFromBasket: (state, action) => {
       state.products = [
         ...state.products.filter((el) => el.id !== action.payload),
       ];
-      Object.assign(state, calculateAllTotals(state))
+      Object.assign(state, calculateAllTotals(state));
       write("products", state.products);
     },
     addQuantityToProduct: (state, action) => {
@@ -82,7 +85,7 @@ export const basketSlice = createSlice({
           el.id === action.payload ? { ...el, quantity: el.quantity + 1 } : el
         ),
       ];
-      Object.assign(state, calculateAllTotals(state))
+      Object.assign(state, calculateAllTotals(state));
       write("products", state.products);
     },
     deletQuantityToProduct: (state, action) => {
@@ -93,7 +96,7 @@ export const basketSlice = createSlice({
             : { ...el, quantity: el.quantity - 1 }
         ),
       ];
-      Object.assign(state, calculateAllTotals(state))
+      Object.assign(state, calculateAllTotals(state));
       write("products", state.products);
     },
   },
@@ -101,6 +104,7 @@ export const basketSlice = createSlice({
 
 export const {
   addProductToBasket,
+  clearBasket,
   countTotalPrice,
   deletPropductFromBasket,
   addQuantityToProduct,

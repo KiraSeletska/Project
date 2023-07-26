@@ -28,23 +28,26 @@ export const AllProducts = () => {
   );
 
   return (
-    <div className={styles.productsWrapper}>
-      <h2>All products</h2>
+    <section className={styles.wrapper}>
+           <h2>All products</h2>
       <Filter onChange={onFilterChanged} />
+    <div className={styles.productsWrapper}>
       {newData &&
         newData.map((el) => (
           <NavLink key={el.id} to={`/products/${el.id}`}>
             <Product
               key={el.id}
+              id={el.id}
               image={baseUrl + el.image}
               price={el.price}
               discont_price={el.discont_price}
               title={el.title}
-              quantity={el.quantity}
               addToBascetHandler={(e) => addToBascetHandler(e, el)}
             />
           </NavLink>
         ))}
     </div>
+    </section>
+
   );
 };

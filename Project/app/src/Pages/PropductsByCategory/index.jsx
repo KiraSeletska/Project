@@ -29,9 +29,11 @@ export const PropductsByCategory = () => {
   }, [data])
 
   return (
-    <div className={styles.wrapper}>
-      <h2>Tools and equipment</h2>
+    <section className={styles.wrapper}>
+            <h2>Tools and equipment</h2>
       <Filter onChange={onFilterChanged}/>
+    <div className={styles.productsWrapper}>
+
       {newData &&
         newData.map((el) => (
           <NavLink key={el.id} to={`/products/${el.id}`}>
@@ -46,5 +48,7 @@ export const PropductsByCategory = () => {
           </NavLink>
         ))}
     </div>
+    </section>
+
   );
 };

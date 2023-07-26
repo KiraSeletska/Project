@@ -1,31 +1,10 @@
 .wrapper {
-  margin: 0 30px;
- 
+  margin: 0 30px 143px;
 
 }
 .wrapper h2 {
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 52px; /* 52px */
-  letter-spacing: 1.2px;
   margin-bottom: 16px;
 }
-.container{
 
 
-}
 
-.wrapper a {
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 26px; 
-  display: block;
-  margin-bottom: 34px;
-
-}
-
-.productsContainer {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 60px;
-}

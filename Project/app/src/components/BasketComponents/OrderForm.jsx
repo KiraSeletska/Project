@@ -2,7 +2,7 @@ import styles from "./orderForm.module.css";
 import { usePostPhoneNumberForOrderMutation } from "../../redux/categoriesApi";
 import { useState } from "react";
 import { FormMessage } from "../Cupon/formMessage";
-
+import { ClearBasketButton } from "../ClearBasketButton";
 export const OrderForm = ({ totalPrice, productsOrdered, userSaving }) => {
   const [postNumberForOrder, { isError, isLoading, isSuccess, error }] =
     usePostPhoneNumberForOrderMutation();
@@ -73,7 +73,7 @@ export const OrderForm = ({ totalPrice, productsOrdered, userSaving }) => {
             <FormMessage status={showError} />
           </div>
 
-          <button onClick={() => sendOrder()} type="submit">
+          <button className={styles.orderBtn} onClick={() => sendOrder()} type="submit">
             Order
           </button>
           <p className={emptyBasket ? styles.empty : styles.close}>
@@ -81,6 +81,7 @@ export const OrderForm = ({ totalPrice, productsOrdered, userSaving }) => {
           </p>
         </form>
       )}
+      <ClearBasketButton/>
     </div>
   );
 };

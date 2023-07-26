@@ -1,14 +1,15 @@
 .wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  width: auto;
-  margin: 3px 30px;
-  gap: 34px;
+  margin: 3px 30px 27px;
 }
 
 .wrapper h2 {
   font-style: italic;
   font-weight: 400;
   margin-bottom: 91px;
-  width: 100%;
+}
+.productsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: auto;
+  gap: 34px;
 }

@@ -23,17 +23,15 @@ export const BasketProduct = ({
         <img src={baseUrl + image} alt="" />
       </div>
       <p className={styles.title}>{title}</p>
-      <div className={styles.pricesContainer}>
         <p className={styles.price}>
           {((discont_price
             ? discont_price
             : price) * quantity).toFixed(2)}
           <span>$</span>
         </p>
-        <span className={styles.discount_price}>
+        <p className={styles.discount_price}>
           {discont_price ? price : ""}
-        </span>
-      </div>
+        </p>
       <div className={styles.qualityBattons}>
         <button onClick={() => downQuantity(id)}>
           <img src={minus} alt="" />
