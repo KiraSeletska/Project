@@ -19,48 +19,50 @@ export const Filter = ({ onChange, hideDiscountFilter = false }) => {
 
   return (
     <div className={styles.sortContainer}>
-      <span className={styles.spanPrice}>Price</span>
+      <div className={styles.priceSection}>
+      <span>Price</span>
       <input
         type="text"
         placeholder="trom"
-        className={styles.inputSort}
         onChange={(e) => setFromPrice(e.target.value)}
       />
       <input
         type="text"
         placeholder="to"
-        className={styles.inputSort}
         onChange={(e) => setToPrice(e.target.value)}
       />
+      </div>
+
       {!hideDiscountFilter && (
-        <>
-          <span className={styles.discSort}> Discount items</span>
+        <div className={styles.discountSection}>
+          <span> Discount items</span>
           <input
-            className={styles.checkbox}
             type="checkbox"
             checked={discountedOnly}
             onChange={(e) => {
               setDiscountedOnly(e.target.checked);
             }}
           />{" "}
-        </>
+        </div>
       )}
-      <span className={styles.spanSorted}>Sorted</span>
+      <div className={styles.selectSection}>
+      <span>Sorted</span>
       <select
-        className={styles.sortSelect}
         value={sortOrder}
         onChange={(e) => setSortOrder(e.target.value)}
       >
-        <option className={styles.option} value="default">
+        <option value="default">
           by dafault
         </option>
-        <option className={styles.option} value="asc">
+        <option value="asc">
           minimum price
         </option>
-        <option className={styles.option} value="desc">
+        <option value="desc">
           maximum price
         </option>
       </select>
+      </div>
+ 
     </div>
   );
 };

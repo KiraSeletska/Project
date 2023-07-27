@@ -5,7 +5,7 @@
 .infoWrapper {
   display: grid;
   grid-template-columns: 1fr 564px;
-  gap: 162px;
+  gap: 100px;
 }
 
 .iconsContainer {
@@ -64,4 +64,20 @@
   height: 525px;
   border: none;
 
+}
+
+@media (max-width: 1300px) {
+  .phone {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .infoWrapper {
+    grid-template-columns: 1fr;
+   
+  }
+  .phone {
+    font-size: 50px;
+  }
 }

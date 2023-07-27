@@ -22,3 +22,10 @@
   font-weight: 600;
   line-height: 23.4px;
 }
+@media (max-width: 1000px) {
+  .imageContainer {
+    width: 200px;
+    height: 200px;
+  
+  }
+}

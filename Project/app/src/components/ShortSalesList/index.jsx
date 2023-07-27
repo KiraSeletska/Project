@@ -2,82 +2,66 @@ import styles from "./styles.module.css";
 import { useGetAllPropductsQuery } from "../../redux/categoriesApi";
 import { baseUrl } from "../../redux/categoriesApi";
 import { Product } from "../Product";
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addProductToBasket } from "../../redux/basketSlice";
-import { countTotalPrice } from "../../redux/basketSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 export const ShortSalesList = () => {
   const { data } = useGetAllPropductsQuery();
-  const [productsState, setProductsState] = useState(40);
+  const onlyDiscounData = data && data.filter((el) => el.discont_price);
+
   const dispatch = useDispatch();
-  const defButtonText = "Add to cart";
-  const actionButtonText = "Product added to cart";
-  const [btn, setBtn] = useState(defButtonText);
-
-  const pading = 40;
-  const oneObg = 350;
-  const ribbon = data && data.filter((el) => el.discont_price).length;
-  const oneStep = oneObg * 3;
-  const ribbonLength = (ribbon * oneObg - oneStep * 2) * -1;
-
-  const stepPlus = () => {
-    if (productsState < ribbonLength) return;
-    const step = productsState - oneStep;
-    setProductsState(step);
-
-  };
-  const stepMin = () => {
-    if (productsState >= pading) return;
-    const step = productsState + oneStep;
-    setProductsState(step);
-  };
 
   const addToBascetHandler = (event, el) => {
     event.preventDefault();
     dispatch(addProductToBasket(el));
-    setBtn(actionButtonText);
-    setTimeout(() => setBtn(defButtonText), 1000);
+  };
+  const [isHover, setIsHover] = useState(false);
+  const handleMouseEnter = () => {
+    setIsHover(true);
+  };
+  const handleMouseLeave = () => {
+    setIsHover(false);
   };
 
   return (
     <div className={styles.wrapper}>
       <h2>Sale</h2>
       <div className={styles.productsWrapper}>
-        <button
-          className={styles.btn + " " + styles.btnRight}
-          onClick={() => stepPlus()}
-        >
-          {">"}
-        </button>
-        <div
-          className={styles.prodacts}
-          style={{ transform: `translateX(${productsState}px)` }}
-        >
-          {data &&
-            data.map((el) =>
-              el.discont_price ? (
+        {data &&
+          onlyDiscounData.slice(0, 3).map(
+            (el) =>
+              el.discont_price && (
                 <NavLink key={el.id} to={`/products/${el.id}`}>
                   <Product
-                    key={el.id}
                     id={el.id}
                     discont_price={el.discont_price}
                     price={el.price}
                     title={el.title}
                     image={baseUrl + el.image}
                     addToBascetHandler={(e) => addToBascetHandler(e, el)}
-                    buttonName={btn}
                   />{" "}
                 </NavLink>
-              ) : (
-                ""
               )
+          )}
+
+        <NavLink to="/sales">
+          <div
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className={styles.linkToSales}
+          >
+            {isHover ? (
+              <FontAwesomeIcon icon={faArrowRight} beat />
+            ) : (
+              <FontAwesomeIcon icon={faArrowRight} />
             )}
-        </div>
-        <button className={styles.btn} onClick={() => stepMin()}>
-          {"<"}
-        </button>
+            <p className={styles.linkText}>All discounts</p>
+          </div>
+        </NavLink>
       </div>
     </div>
   );

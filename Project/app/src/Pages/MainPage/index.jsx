@@ -1,7 +1,7 @@
 import { SalesSection } from "../../components/SalesSection";
 import { SmallCataloge } from "../../components/SmallCatalog";
 import { Cupon } from "../../components/Cupon";
-import { ShortSalesList2 } from "../../components/ShortSalesList2";
+import { ShortSalesList } from "../../components/ShortSalesList";
 
 export const MainPage = () => {
   return (
@@ -9,7 +9,7 @@ export const MainPage = () => {
       <SalesSection />
       <SmallCataloge />
       <Cupon/>
-      <ShortSalesList2 />
+      <ShortSalesList />
     </div>
   );
 };

@@ -3,11 +3,17 @@ import logo from "../../images/logo.svg";
 import shoppingBag from "../../images/shoppingbag.svg";
 import { NavLink } from "react-router-dom";
 import { useSelector } from 'react-redux'
+import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export const Header = () => {
 
   const totalProducts = useSelector((state) => state.basket.products)
   const totalProductsQ = useSelector((state) => state.basket)
+
+  const [burger, setBurger] = useState(false)
+
   const showBasket = () => {
     console.log(totalProductsQ)
   }
@@ -16,27 +22,45 @@ export const Header = () => {
     <header className={styles.headerContainer}>
       <div className={styles.logoContainer}>
         <img src={logo} alt="Logo" />
-         <NavLink to="/propducts"><button>Catalog</button> </NavLink>
+         <NavLink to="/propducts" ><button>Catalog</button> </NavLink>
       
       </div>
-      <nav>
-        <ul className={styles.list}>
+  
+      <nav className={styles.navBar}>
+        <ul className={!burger ? styles.list : styles.listActive}>
         <li>
-            <NavLink to="/mainPage">Main Page</NavLink>
+            <NavLink to="/mainPage"
+                onClick={()=>setBurger(false)}
+            >Main Page</NavLink>
           </li>
           <li>
-            <NavLink to="/propducts">All propducts</NavLink>
+            <NavLink to="/propducts"
+               onClick={()=>setBurger(false)}
+            >All propducts</NavLink>
           </li>
           <li>
-            <NavLink to="/sales">All sales</NavLink>
+            <NavLink to="/sales"
+               onClick={()=>setBurger(false)}
+            >All sales</NavLink>
           </li>
         </ul>
+        <div className={styles.mediaBasketContainer}>
+        <button className={styles.burger}
+      onClick={()=>setBurger(!burger)}
+      >
+       { !burger 
+       ? <FontAwesomeIcon icon={faBars} />
+      : <FontAwesomeIcon icon={faXmark} />
+      }
+       </button>
         <div className={styles.totalInBasket}>
         <NavLink to="/basket"><img src={shoppingBag} alt="Basket" />
         <p>{ totalProducts.length}</p>
         </NavLink>
    
           </div>
+        </div>
+
       </nav>
     </header>
   );

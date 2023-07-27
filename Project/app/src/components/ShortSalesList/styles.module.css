@@ -4,29 +4,42 @@
 
 .productsWrapper {
   margin-top: 21px;
-  overflow: hidden;
   display: flex;
-  position: relative;
-}
-.prodacts {
-  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   gap: 44px;
-  transition: 1s;
 }
 
-.btn {
-  height: 100%;
-  width: 50px;
-  position: absolute;
-  z-index: 111;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  font-size: 50px;
-
+.linkToSales {
+  width: 300px;
+  height: 276px;
+  background: #fbfbfb;
+  border-radius: 21px;
+  font-size: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  box-shadow: -23px 0 20px -23px rgba(0, 0, 0, .8),
+23px 0 20px -23px rgba(0, 0, 0, .8),
+0 0 40px rgba(0, 0, 0, .1);
 }
-.btnRight {
-
-  top: 0;
-  right: 0px;
+.linkToSales:hover{
+  color: #ff32a1;
+}
+.linkText{
+  font-size: 15px;
+}
+@media (max-width: 1000px) {
+  .wrapper {
+    margin: 40px 12px 89px 13px;
+  }
+  .productsWrapper {
+    gap: 24px;
+  }
+  .linkToSales {
+    width: 200px;
+    height: 200px;
+  }
 }

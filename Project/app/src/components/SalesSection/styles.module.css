@@ -3,6 +3,7 @@
   color: #fff;
   display: grid;
   grid-template-columns: 2fr auto;
+  height: 600px;
 }
 
 .textContainer {
@@ -15,7 +16,6 @@
 .textContainer span {
   font-size: 63px;
 }
-
 
 .btn {
   margin-top: 60px;
@@ -31,4 +31,21 @@
 
 .imgContainer {
   overflow: hidden;
+}
+.imgContainer img{
+  margin-top: -61px;
+}
+
+@media (max-width: 1200px) {
+  .salesContainer {
+    grid-template-columns: 1fr;
+    background-image: url("../../images/image2.svg");
+    background-position-x: right;
+    background-position-y: -61px;
+    background-repeat: no-repeat;
+    
+  }
+  .imgContainer {
+    display: none;
+  }
 }

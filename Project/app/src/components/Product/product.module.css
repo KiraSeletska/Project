@@ -64,3 +64,33 @@
   line-height: 20.8px; /* 20.8px */
   letter-spacing: 0.48px;
 }
+@media (max-width: 1000px) {
+  .wrapper {
+    width: 200px;
+  }
+  .imgContainer {
+    width: 200px;
+    height: 176px;
+
+  
+  }
+  .priceContainer {
+  width: 100%;
+  gap: 25px;
+    
+  }
+  .price {
+    font-size: 20px;
+  }
+  .discont_price {
+    font-size: 15px;
+  }
+  .procent {
+    font-size: 15px;
+  }
+  .title {
+    width: 200px;
+    font-size: 15px;
+
+  }
+}

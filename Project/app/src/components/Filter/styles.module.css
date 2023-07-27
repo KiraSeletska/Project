@@ -1,50 +1,57 @@
 .sortContainer {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 300px 250px 340px;
   align-items: center;
+  gap: 40px;
 }
-.sortContainer input {
-  border-radius: 7px;
-  border: 1px solid #000;
-  padding-left: 10px;
-}
-.sortContainer::placeholder {
-  color: #797979;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20, 8px; /* 20.8px */
-  letter-spacing: 0.48px;
-  margin-left: 10px;
-}
+
 .sortContainer span {
   font-size: 20px;
   font-weight: 600;
   line-height: 26px; /* 26px */
   letter-spacing: 0.6px;
 }
-.inputSort {
-  margin: 0 15px;
+
+.priceSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.priceSection input {
+  border-radius: 7px;
+  border: 1px solid #000;
+  padding: 0 10px;
   width: 103px;
   height: 42px;
 }
-.inputSort::placeholder {
+.priceSection input::placeholder {
   color: #acacac;
   font-size: 16px;
   font-weight: 500;
-  line-height: 20.8px; /* 20.8px */
+  line-height: 20, 8px; /* 20.8px */
   letter-spacing: 0.48px;
 }
-.discSort {
-  margin: 0 40px;
+
+.discountSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 39px;
 }
-.checkbox {
+
+.discountSection input {
   zoom: 3;
 }
-.spanSorted {
-  margin: 0 42px 0 68px;
+
+.selectSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 42px;
 }
-.sortSelect {
+.selectSection select {
   width: 219px;
   height: 40px;
   border-radius: 7px;
@@ -56,12 +63,7 @@
   line-height: 20.8px; /* 20.8px */
   letter-spacing: 0.48px;
 }
-
-.option {
-  min-height: 2.2em;
-
-}
-
+/*
 .inputSortByDefault {
   margin-left: 42px;
   width: 219px;
@@ -71,6 +73,16 @@
   color: #797979;
   font-size: 16px;
   font-weight: 500;
-  line-height: 20, 8px; /* 20.8px */
+  line-height: 20, 8px; /* 20.8px */ /*
   letter-spacing: 0.48px;
+}*/
+@media (max-width: 1100px) {
+  .sortContainer {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 300px;
+  }
+   .discountSection {
+    justify-content: space-between;
+  }
 }
