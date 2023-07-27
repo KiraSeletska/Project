@@ -1,28 +1,27 @@
 .addToCard {
-    width: 279px;
-    height: 72px;
-    flex-shrink: 0;
-    color: #393;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 26.4px; /* 23.4px */
-    border-radius: 21px;
-    border: 2px solid #393;
+  width: 87%;
+  margin: auto;
+  height: 72px;
+  flex-shrink: 0;
+  color: #393;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26.4px; /* 23.4px */
+  border-radius: 21px;
+  border: 2px solid #393;
   background: #f1fff1;
-    /*background: #ff32a1;*/
-    z-index: 111;
-    position: absolute;
-    cursor: pointer;
-    bottom: 32px;
-    left: 10px;
-   opacity: 0;
-    transition: opacity .3s;
-  
-  }
-  .addToCard:hover{
-    opacity: 1;
-    transition: opacity .3s;
-  }
-  .addToCard:active{
-    transform: scale(0.95);
-  }
+  /*background: #ff32a1;*/
+  z-index: 111;
+  position: absolute;
+  cursor: pointer;
+  bottom: 32px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.addToCard:hover {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.addToCard:active {
+  transform: scale(0.95);
+}

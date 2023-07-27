@@ -8,6 +8,7 @@
   margin-bottom: 91px;
 }
 .productsWrapper {
+  margin-top: 34px;
   display: flex;
   flex-wrap: wrap;
   width: auto;

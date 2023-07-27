@@ -39,6 +39,7 @@ export const PropductsByCategory = () => {
           <NavLink key={el.id} to={`/products/${el.id}`}>
             <Product
               key={el.id}
+              id={el.id}
               image={baseUrl + el.image}
               price={el.price}
               discont_price={el.discont_price}

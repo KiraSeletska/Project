@@ -41,7 +41,7 @@ const basketImage =<FontAwesomeIcon icon={faCartShopping} bounce style={{color: 
             <div className={styles.imageContainer}>
               <img src={baseUrl + data[0].image} alt="imag" />
             </div>
-            <div>
+            <div className={styles.infoContainer}>
               <div className={styles.priceContainer}>
                 <p className={styles.price}>
                   {data[0].discont_price
@@ -66,7 +66,9 @@ const basketImage =<FontAwesomeIcon icon={faCartShopping} bounce style={{color: 
               >
                {!status ? defButtonText : basketImage} 
               </button>
-              <ProductQuantity id={data[0].id}/>
+             <p className={styles.quantity}>
+             <ProductQuantity id={data[0].id}/>
+              </p>
               <h6>Description</h6>
               <p className={styles.description}>{data[0].description}</p>
             </div>

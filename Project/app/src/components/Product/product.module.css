@@ -1,54 +1,35 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
+  /*width: 319px;*/
+  width: 300px;
 }
+
 .imgContainer {
+  /*width: 319px;*/
+  width: 300px;
+  height: 276px;
+  background: #FBFBFB;
+  border-radius: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   overflow: hidden;
-  width: 100%;
-  height: 300px;
-}
-.addToCard {
-  width: 279px;
-  height: 72px;
-  flex-shrink: 0;
-  color: #393;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 26.4px; /* 23.4px */
-  border-radius: 21px;
-  border: 2px solid #393;
-background: #f1fff1;
-  /*background: #ff32a1;*/
-  z-index: 111;
-  position: absolute;
-  cursor: pointer;
-  bottom: 32px;
-  left: 10px;
- opacity: 0;
-  transition: opacity .3s;
 
 }
-.addToCard:hover{
-  opacity: 1;
-  transition: opacity .3s;
+.imgContainer img {
+  height: auto;
+  width: 100%;
 }
-.addToCard:active{
-  transform: scale(0.95);
-}
-.wrapper img {
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-}
+
 .priceContainer {
   display: flex;
   align-items: flex-end;
   gap: 47px;
-  margin: 20px 0 10px 7px;
+  margin: 20px 0 10px;
+  padding-left: 20px;
+  
 }
 .price {
   color: #000;
@@ -76,7 +57,7 @@ background: #f1fff1;
   width: 300px;
   height: 42px;
   word-wrap: break-word;
-  margin-left: 7px;
+  padding-left: 20px;
   color: #3a3a3a;
   font-size: 16px;
   font-weight: 500;

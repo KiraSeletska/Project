@@ -17,9 +17,7 @@ export const Header = () => {
       <div className={styles.logoContainer}>
         <img src={logo} alt="Logo" />
          <NavLink to="/propducts"><button>Catalog</button> </NavLink>
-        <button className={styles.stateBtn}
-        onClick={()=>showBasket()}
-        >Product in backet</button>
+      
       </div>
       <nav>
         <ul className={styles.list}>

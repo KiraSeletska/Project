@@ -5,7 +5,6 @@ import { baseUrl } from "../../redux/categoriesApi";
 import { NavLink } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addProductToBasket } from "../../redux/basketSlice";
-import { countTotalPrice } from "../../redux/basketSlice";
 import { useState, useCallback } from "react";
 import { Filter } from "../../components/Filter";
 import { ApplyFilter } from "../../util/ApplyFilter";
@@ -41,6 +40,7 @@ export const SalesPage = () => {
               <NavLink key={el.id} to={`/products/${el.id}`}>
                 <Product
                   key={el.id}
+                  id={el.id}
                   discont_price={el.discont_price}
                   price={el.price}
                   title={el.title}

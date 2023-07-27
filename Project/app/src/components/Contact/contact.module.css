@@ -1,18 +1,16 @@
 .wrapper {
-  margin: 0 32px 38px;
-  padding-top: 48px;
+  padding: 48px 0 28px 32px;
 }
 
 .infoWrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 564px;
   gap: 162px;
-  margin: auto;
 }
-.conectWrapper {
-}
+
 .iconsContainer {
   display: flex;
-  gap: 62px;
+  gap: 32px;
 }
 .iconContainer a {
   display: flex;
@@ -29,15 +27,16 @@
   font-weight: 600;
   line-height: 19.5px; /* 19.5px */
 }
-.adressWrapper {
-    width: 41%;
-}
 
 .phone {
   font-size: 70px;
   font-weight: 600;
   line-height: 91px; /* 91px */
   margin: 25px 0 30px;
+  width: auto;
+}
+.adressWrapper h2 {
+  margin-bottom: 25px;
 }
 .adressWrapper a {
   font-size: 40px;
@@ -61,6 +60,7 @@
 }
 .googleMap {
   width: 100%;
+  padding-right: 62px;
   height: 525px;
   border: none;
 

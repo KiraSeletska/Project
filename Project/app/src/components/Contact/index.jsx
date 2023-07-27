@@ -27,8 +27,8 @@ export const Contact = () => {
         </div>
       </div>
       <div className={styles.adressWrapper}>
-        <h3>Address</h3>
-        <a href="#">Linkstraße 2, 8 OG, 10785, Berlin, Deutschland</a>
+        <h2>Address</h2>
+        <a href="https://www.google.com/search?q=telranDE">Linkstraße 2, 8 OG, 10785, Berlin, Deutschland</a>
         <p className={styles.workingTime}>Working Hours:</p>
         <p className={styles.time}>24 hours a day</p>
       </div>

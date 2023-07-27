@@ -18,8 +18,8 @@
   font-weight: 600;
   line-height: 26px; /* 26px */
   letter-spacing: 0.6px;
-  padding-top: 25px;
-  margin: 40px 0 15px;
+  padding-top: 25.5px;
+  margin-bottom: 15px;
 }
 
 .productContainer {
@@ -40,6 +40,16 @@
 .imageContainer img {
   width: 100%;
   flex-shrink: 0;
+}
+.quantity p{
+  margin: 20px 0 20px;
+  font-size: 20px;
+  height: 25px;
+ text-align: start;
+ color: #8B8B8B;
+font-weight: 500;
+line-height: 26px; /* 26px */
+letter-spacing: 0.6px;
 }
 .description {
   font-size: 20px;
@@ -93,18 +103,12 @@
   margin: 40px 0 0;
   cursor: pointer;
 }
-/*
-.btnToCart:hover {
-  transform: scale(1.1);
- 
-}*/
+
 .btnToCart:active {
 background-color: #393;
 transform: scale(0.95);
 }
-.message{
 
-}
 .description {
   font-size: 20px;
   font-weight: 500;

@@ -61,6 +61,7 @@ export const ShortSalesList = () => {
                 <NavLink key={el.id} to={`/products/${el.id}`}>
                   <Product
                     key={el.id}
+                    id={el.id}
                     discont_price={el.discont_price}
                     price={el.price}
                     title={el.title}
