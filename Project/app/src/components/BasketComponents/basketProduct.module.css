@@ -118,3 +118,39 @@ background: #FBFBFB;
     border: none;
     grid-area: close;
   }
+  @media (max-width: 1050px) {
+    .productContainer {
+      grid-template-areas:
+        "img des  . close"
+        "img price . ."
+        "img discount . ."
+        "img battons . .";
+      grid-template-columns: auto 2fr 1fr 25px;
+      grid-template-rows: auto auto auto;
+      justify-items: start;
+    }
+    .price {
+      font-size: 25px;
+    }
+
+    .discount_price {
+      font-size: 15px;
+      margin-left: 10px;
+    }
+    .qualityBattons {
+      width: 100px;
+    }
+  }
+  @media (max-width: 900px) {
+    .productContainer{
+      grid-template-areas:
+      "img des . . close"
+      "img . price discount ."
+      "img battons . . .";
+    grid-template-columns: auto 2fr 1fr 1fr 25px;
+    }
+    .discount_price {
+      margin-left: 0;
+    }
+  }
+  

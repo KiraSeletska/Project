@@ -1,5 +1,4 @@
-.productOrder {
-}
+
 .productOrder form {
   margin-top: 87px;
   border-radius: 21px;
@@ -113,14 +112,45 @@ height: 25px;
   opacity: 0;
   height: 25px;
 }
-.clearBasket{
-  margin: 25px;
-  border-radius: 17px;
-  width: 150px;
-  height: 30px;
-  font-size: 15px;
-  background-color: red;
-  color: #fff;
-  cursor: pointer;
 
+@media (max-width: 1050px) {
+  h3 {
+    font-size: 20px;
+  }
+  .productOrder h6 {
+    font-size: 18px;
+  }
+  .totalPrice {
+    font-size: 25px;
+  }
+  .productOrder input {
+    height: 53px;
+  }
+  .productOrder input::placeholder{
+    color: #929292;
+  font-size: 13px;
+  }
+  .orderBtn {
+    height: 53px;
+  }
+}
+@media (max-width: 900px) {
+  h3 {
+    font-size: 28px;
+  }
+  .productOrder h6 {
+    font-size: 24px;
+  }
+  .totalPrice {
+    font-size: 32px;
+  }
+  .productOrder input {
+    height: 73px;
+  }
+  .productOrder input::placeholder{
+    font-size: 18px;
+  }
+  .orderBtn {
+    height: 73px;
+  }
 }

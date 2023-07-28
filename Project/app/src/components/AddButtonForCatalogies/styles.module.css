@@ -25,3 +25,10 @@
 .addToCard:active {
   transform: scale(0.95);
 }
+@media (max-width: 900px) {
+  .addToCard {
+    height: 52px;
+    font-size: 13px;
+    bottom: 22px;
+  }
+}

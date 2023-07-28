@@ -75,3 +75,21 @@
   line-height: 20, 8px; /* 20.8px */
   letter-spacing: 0.48px;
 }
+@media (max-width: 1200px) {
+  .productsContainer {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+@media (max-width: 1050px) {
+  .productsContainer {
+    grid-template-columns: 60% 40%;
+
+  }
+}
+@media (max-width: 900px) {
+  .productsContainer {
+    grid-template-columns: 1fr;
+
+  }
+}

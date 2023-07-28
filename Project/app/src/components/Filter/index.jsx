@@ -36,6 +36,9 @@ export const Filter = ({ onChange, hideDiscountFilter = false }) => {
       {!hideDiscountFilter && (
         <div className={styles.discountSection}>
           <span> Discount items</span>
+          <span className={styles.mediaDiscountSpan}>
+            %
+          </span>
           <input
             type="checkbox"
             checked={discountedOnly}

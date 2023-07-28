@@ -31,4 +31,13 @@ line-height: 52px; /* 52px */
 letter-spacing: 1.2px;
 background: #fff;
 }
-
+@media (max-width: 700px) {
+  h2{
+    font-size: 30px;
+  }
+}
+@media (max-width: 600px) {
+  h2{
+    font-size: 25px;
+  }
+}
