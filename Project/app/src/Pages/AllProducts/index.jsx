@@ -8,9 +8,11 @@ import { addProductToBasket } from "../../redux/basketSlice";
 import { useState, useCallback } from "react";
 import { Filter } from "../../components/Filter";
 import { ApplyFilter } from "../../util/ApplyFilter";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 export const AllProducts = () => {
-  const { data } = useGetAllPropductsQuery();
+  const { data, isLoading, error }  = useGetAllPropductsQuery();
   const dispatch = useDispatch();
 
   const [newData, setNewData] = useState();
@@ -28,9 +30,14 @@ export const AllProducts = () => {
   );
 
   return (
-    <section className={styles.wrapper}>
+    <div className={styles.wrapper}>
            <h2>All products</h2>
       <Filter onChange={onFilterChanged} />
+      {isLoading ? (
+        <h2>LOADING <FontAwesomeIcon icon={faSpinner} spinPulse /></h2>
+      ) : error ? (
+        <h2>Error: {error.error}</h2>
+      ) : (
     <div className={styles.productsWrapper}>
       {newData &&
         newData.map((el) => (
@@ -47,7 +54,8 @@ export const AllProducts = () => {
           </NavLink>
         ))}
     </div>
-    </section>
+      )}
+    </div>
 
   );
 };

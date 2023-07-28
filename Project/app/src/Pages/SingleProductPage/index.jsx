@@ -4,11 +4,9 @@ import { useParams } from "react-router-dom";
 import { baseUrl } from "../../redux/categoriesApi";
 import { useDispatch } from "react-redux";
 import { addProductToBasket } from "../../redux/basketSlice";
-import { countTotalPrice } from "../../redux/basketSlice";
-import { AddToCardMessages } from "../../components/Messages/addToCardMesssage";
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faCartShopping}from '@fortawesome/free-solid-svg-icons'
+import {faCartShopping, faSpinner}from '@fortawesome/free-solid-svg-icons'
 import { ProductQuantity } from "../../components/ProductQuantity";
 
 export const SingleProductPage = () => {
@@ -31,7 +29,7 @@ const basketImage =<FontAwesomeIcon icon={faCartShopping} bounce style={{color: 
   return (
     <div>
       {isLoading ? (
-        <h2>LOADING...</h2>
+        <h2>LOADING <FontAwesomeIcon icon={faSpinner} spinPulse /></h2>
       ) : error ? (
         <h2>Error: {error.error}</h2>
       ) : (

@@ -2,6 +2,9 @@ import styles from "./orderForm.module.css";
 import { usePostPhoneNumberForOrderMutation } from "../../redux/categoriesApi";
 import { useState } from "react";
 import { FormMessage } from "../Cupon/formMessage";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { SuccessfullySent } from "../Messages/successfullySent";
 
 export const OrderForm = ({ totalPrice, productsOrdered, userSaving }) => {
   const [postNumberForOrder, { isError, isLoading, isSuccess, error }] =
@@ -38,15 +41,9 @@ export const OrderForm = ({ totalPrice, productsOrdered, userSaving }) => {
   return (
     <div className={styles.productOrder}>
       {isLoading ? (
-        <h3>Loading</h3>
+           <h2>LOADING <FontAwesomeIcon icon={faSpinner} spinPulse /></h2>
       ) : isSuccess ? (
-        <div className={styles.saccessSendPhoneNumber}>
-          <h3>
-            Your order has been sent. <br />
-            Order price: <span>{totalPrice}</span> <br />
-            Expect a delivery message to the number: <span>{phoneNumber}</span>
-          </h3>
-        </div>
+      <SuccessfullySent totalPrice={totalPrice} phoneNumber={phoneNumber}/>
       ) : isError ? (
         <h3>{error.error}</h3>
       ) : (

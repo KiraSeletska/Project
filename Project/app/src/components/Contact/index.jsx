@@ -10,14 +10,14 @@ export const Contact = () => {
         <h2>Contact</h2>
         <p className={styles.phone}>+49 999 999 99 99</p>
         <div className={styles.iconsContainer}>
-          <div className={styles.iconContainer}>
+          <div className={styles.instagram}>
             <a href="#">
               <img src={Instagram_icon} alt="Logo instagram" />
               <p>Instagram</p>
             </a>
          
           </div>
-          <div className={styles.iconContainer}>
+          <div className={styles.whatsUp}>
             <a href="#">
               <img src={WhatsApp_icon} alt="Logo WhatsApp" />
               <p>WhatsApp</p>

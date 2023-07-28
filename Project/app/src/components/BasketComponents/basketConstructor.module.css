@@ -1,16 +1,17 @@
-.productsContainer {
+.wrapper {
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-template-rows: auto;
   gap: 60px;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 16px 0 34px;
+  margin: 32px 0 14px;
 }
-.productsContainer a {
+.wrapper a {
   font-size: 20px;
   font-weight: 500;
   line-height: 26px;
@@ -75,21 +76,38 @@
   line-height: 20, 8px; /* 20.8px */
   letter-spacing: 0.48px;
 }
+.scrollToBasket {
+
+  width: 7vw;
+  height: 50px;
+  position: fixed;
+  bottom: 200px;
+  right: 20px;
+  border-radius: 17px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+display: none;
+}
+.scrollToBasket a {
+  color: rgb(0, 0, 0, 0.3);
+  font-size: 35px;
+
+}
+.scrollToBasket a:hover {
+  color: rgb(82, 82, 82);
+}
 @media (max-width: 1200px) {
-  .productsContainer {
+  .wrapper {
     grid-template-columns: 1fr 1fr;
     gap: 30px;
   }
 }
+
 @media (max-width: 1050px) {
-  .productsContainer {
-    grid-template-columns: 60% 40%;
-
-  }
-}
-@media (max-width: 900px) {
-  .productsContainer {
+  .wrapper {
     grid-template-columns: 1fr;
-
+  }
+  .scrollToBasket {
+    display: block;
   }
 }

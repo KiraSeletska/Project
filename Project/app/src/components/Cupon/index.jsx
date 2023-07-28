@@ -3,10 +3,12 @@ import gnome from "../../images/gnome.svg";
 import { usePostPhoneNumberForDiscountMutation } from "../../redux/categoriesApi";
 import { useState } from "react";
 import { FormMessage } from "./formMessage";
-import { ValidInput } from "../ValidInput";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+
 export const Cupon = () => {
   
-  const [postNumberForDiscount, { isError, isLoading, isSuccess }] =
+  const [postNumberForDiscount, { isError, isLoading, isSuccess, error }] =
     usePostPhoneNumberForDiscountMutation();
 
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -37,7 +39,7 @@ const [showError, setShowError] = useState(false);
           on the first order
         </div>
         {isLoading ? (
-          <h3>Loading</h3>
+              <h2>LOADING <FontAwesomeIcon icon={faSpinner} spinPulse /></h2>
         ) : isSuccess ? (
           <div className={styles.saccessSendPhoneNumber}>
             <h3>
@@ -46,7 +48,7 @@ const [showError, setShowError] = useState(false);
             </h3>
           </div>
         ) : isError ? (
-          <h3>ooops</h3>
+          <h2>Error: {error.error}</h2>
         ) : (
           <form className={styles.form}
             onSubmit={(e) => {

@@ -5,12 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { BasketProduct } from "./BasketProduct";
 import { ClearBasketButton } from "../ClearBasketButton";
 import {
-  countTotalPrice,
   deletPropductFromBasket,
   addQuantityToProduct,
   deletQuantityToProduct,
 } from "../../redux/basketSlice";
 import { OrderForm } from "../../components/BasketComponents/OrderForm";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 
 export const BasketConstructor = () => {
   const productsInBasket = useSelector((state) => state.basket.products);
@@ -31,7 +32,7 @@ export const BasketConstructor = () => {
   };
 
   return (
-    <div className={styles.productsContainer}>
+    <div className={styles.wrapper}>
       <div className={styles.productsList}>
         <div className={styles.header}>
           <ClearBasketButton />
@@ -51,11 +52,17 @@ export const BasketConstructor = () => {
             />
           ))}
       </div>
+      <scroll-page id="basket">      
       <OrderForm
         totalPrice={totalPrice}
         productsOrdered={productsInBasket}
         userSaving={userSaving}
-      />
+      /></scroll-page>
+      <button className={styles.scrollToBasket}> 
+      <a href="#basket" >
+      <FontAwesomeIcon icon={faBasketShopping} />
+      </a>
+        </button>
     </div>
   );
 };

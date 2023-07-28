@@ -1,0 +1,51 @@
+.saccessSendPhoneNumber{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  margin-top: 76px;
+  border-radius: 21px;
+  border: 2px solid #000;
+  padding: 25px;
+  width: auto;
+  height: 467px;
+
+}
+
+.saccessSendPhoneNumber h3 {
+  font-size: 25px;
+  padding: 0;
+  margin: 15px auto;
+}
+
+.saccessSendPhoneNumber p {
+  font-size: 20px;
+  line-height: 30px;
+}
+.text1 {
+display: inline;
+  margin-bottom: 25px;
+}
+.text2{
+  margin-top: 25px;
+}
+.price{
+  width: 200px;
+  display: inline;
+}
+
+.price, 
+.phone{
+  color: #393;
+  font-size: 25px;
+  font-weight: 800;
+  margin-left: 15px;
+
+}
+.imageContainer {
+  width: auto;
+  display: inline-block;
+  font-size: 70px;
+  color: #393;
+  margin: auto;
+}

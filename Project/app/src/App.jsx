@@ -1,10 +1,8 @@
 import "./App.css";
 import { Header } from "./components/Header";
-import { Sales } from "./components/SalesSection";
 import { Outlet } from "react-router-dom";
-import { SmallCataloge } from "./components/SmallCatalog";
 import { Contact } from "./components/Contact";
-import { MainPage } from "./Pages/MainPage";
+import {UpDownButton} from './components/UpDownButton'
 
 function App() {
   return (
@@ -12,6 +10,7 @@ function App() {
       <Header />
       <Outlet />
       <Contact />
+      <UpDownButton/>
     </div>
   );
 }

@@ -5,22 +5,21 @@ import { Product } from "../../components/Product";
 import { baseUrl } from "../../redux/categoriesApi";
 import { useDispatch } from "react-redux";
 import { addProductToBasket } from "../../redux/basketSlice";
-import { countTotalPrice } from "../../redux/basketSlice";
-import { useEffect, useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import { Filter } from "../../components/Filter";
 import { ApplyFilter } from "../../util/ApplyFilter";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 export const PropductsByCategory = () => {
   const { id } = useParams();
-  const { data } = useGetOneCategoryQuery(id);
+  const { data, isLoading, error } = useGetOneCategoryQuery(id);
 
   const [newData, setNewData] = useState();
   const dispatch = useDispatch();
 
   const addToBascetHandler = (event, el) => {
-    //Может ее вынести куда-то? А то она много где повторяется
     event.preventDefault();
-   // const newProduct = { ...el, quantity: 1 };
     dispatch(addProductToBasket(el));
 
   };
@@ -29,9 +28,14 @@ export const PropductsByCategory = () => {
   }, [data])
 
   return (
-    <section className={styles.wrapper}>
+    <div className={styles.wrapper}>
             <h2>Tools and equipment</h2>
       <Filter onChange={onFilterChanged}/>
+      {isLoading ? (
+        <h2>LOADING <FontAwesomeIcon icon={faSpinner} spinPulse /></h2>
+      ) : error ? (
+        <h2>Error: {error.error}</h2>
+      ) : (
     <div className={styles.productsWrapper}>
 
       {newData &&
@@ -49,7 +53,8 @@ export const PropductsByCategory = () => {
           </NavLink>
         ))}
     </div>
-    </section>
+        )}
+    </div>
 
   );
 };

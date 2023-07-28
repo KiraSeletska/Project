@@ -3,7 +3,7 @@
   color: #fff;
   display: grid;
   grid-template-columns: 2fr auto;
-  height: 600px;
+  height: auto;
 }
 
 .textContainer {

@@ -1,6 +1,6 @@
 
 .productOrder form {
-  margin-top: 87px;
+  margin-top: 76px;
   border-radius: 21px;
   border: 2px solid #000;
   padding: 25px;
@@ -85,20 +85,7 @@ height: 25px;
   color:  #393;
   font-weight: 700;
 }
-.saccessSendPhoneNumber{
-  border-radius: 21px;
-  border: 2px solid #000;
-  padding: 25px;
-  width: auto;
-  height: 373px;
 
-}
-.saccessSendPhoneNumber h3{
-  font-size: 20px;
-}
-.saccessSendPhoneNumber span{
-  color:  #393;
-}
 .productOrder .empty{
   color:  #393;
   font-size: 15px;
@@ -114,43 +101,8 @@ height: 25px;
 }
 
 @media (max-width: 1050px) {
-  h3 {
-    font-size: 20px;
-  }
-  .productOrder h6 {
-    font-size: 18px;
-  }
-  .totalPrice {
-    font-size: 25px;
-  }
-  .productOrder input {
-    height: 53px;
-  }
-  .productOrder input::placeholder{
-    color: #929292;
-  font-size: 13px;
-  }
-  .orderBtn {
-    height: 53px;
-  }
-}
-@media (max-width: 900px) {
-  h3 {
-    font-size: 28px;
-  }
-  .productOrder h6 {
-    font-size: 24px;
-  }
-  .totalPrice {
-    font-size: 32px;
-  }
-  .productOrder input {
-    height: 73px;
-  }
-  .productOrder input::placeholder{
-    font-size: 18px;
-  }
-  .orderBtn {
-    height: 73px;
+  .productOrder form {
+    width: 80%;
+    margin: auto;
   }
 }
