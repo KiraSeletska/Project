@@ -13,6 +13,7 @@ import { Basket } from "./Pages/Basket";
 import { SalesPage } from "./Pages/SalesPage";
 import { PropductsByCategory } from "./Pages/PropductsByCategory";
 import { SingleProductPage } from "./Pages/SingleProductPage";
+import { ProductsByName } from "./Pages/ProductsByName";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "/categories/:id",
         element: <PropductsByCategory />,
+      },
+         {
+        path: "/productsSearch",
+        element: <ProductsByName />,
       },
     ],
   },

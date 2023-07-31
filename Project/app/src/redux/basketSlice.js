@@ -99,6 +99,13 @@ export const basketSlice = createSlice({
       Object.assign(state, calculateAllTotals(state));
       write("products", state.products);
     },
+    addSearch: (state, action) => {
+      state.search !== undefined 
+      ? state.search = [
+        ...state.search, action.payload
+      ] 
+      : state =  {...state, searsh: action.payload}
+    }
   },
 });
 

@@ -1,7 +1,7 @@
 import styles from "./orderForm.module.css";
 import { usePostPhoneNumberForOrderMutation } from "../../redux/categoriesApi";
 import { useState } from "react";
-import { FormMessage } from "../Cupon/formMessage";
+import { FormMessage } from "../Messages/formMessage";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { SuccessfullySent } from "../Messages/successfullySent";
@@ -26,6 +26,7 @@ export const OrderForm = ({ totalPrice, productsOrdered, userSaving }) => {
     }
 
     const phoneNumberRestrictions = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
+    
     if (phoneNumberRestrictions.test(phoneNumber) === false) {
       setShowError(true);
       setTimeout(() => setShowError(false), 2000);

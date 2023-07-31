@@ -7,7 +7,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 export const Categories = () => {
   const { data, isLoading, error } = useGetAllCategoriesQuery();
-
+console.log(data)
   return (
     <div className={styles.wrapper}>
       <h2>Categories</h2>

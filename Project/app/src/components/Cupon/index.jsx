@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 import gnome from "../../images/gnome.svg";
 import { usePostPhoneNumberForDiscountMutation } from "../../redux/categoriesApi";
 import { useState } from "react";
-import { FormMessage } from "./formMessage";
+import { FormMessage } from "../Messages/formMessage";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 

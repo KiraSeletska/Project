@@ -21,15 +21,16 @@ export const PropductsByCategory = () => {
   const addToBascetHandler = (event, el) => {
     event.preventDefault();
     dispatch(addProductToBasket(el));
-
   };
+  
   const onFilterChanged = useCallback((filterObj) => {
     setNewData(ApplyFilter(data?.data || [], filterObj))
   }, [data])
 
   return (
     <div className={styles.wrapper}>
-            <h2>Tools and equipment</h2>
+         { /*<h2>{data?.category.title}</h2>*/}
+         <h2>{data && data.category.title}</h2>
       <Filter onChange={onFilterChanged}/>
       {isLoading ? (
         <h2>LOADING <FontAwesomeIcon icon={faSpinner} spinPulse /></h2>
