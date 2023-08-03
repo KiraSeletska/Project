@@ -115,3 +115,35 @@ transform: scale(0.95);
   line-height: 26px; /* 26px */
   letter-spacing: 0.6px;
 }
+
+@media (max-width: 1000px) {
+  .productContainer {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .imageContainer {
+    height: auto;
+  }
+
+  .btnToCart {
+    width: 100%;
+  }
+}
+@media (max-width: 700px) {
+  .price {
+    font-size: 40px;
+  }
+  .discont_price {
+    font-size: 18px;
+    margin-left: 30px;
+  }
+  .procent {
+
+    font-size: 25px;
+    margin-left: 30px;
+  }
+  .btnToCart {
+    height: auto;
+    font-size: 20px;
+  }
+}

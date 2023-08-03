@@ -118,19 +118,7 @@ background: #FBFBFB;
     border: none;
     grid-area: close;
   }
-  /*
-  @media (max-width: 1050px) {
-    .productContainer{
-      grid-template-areas:
-      "img des . . close"
-      "img . price discount ."
-      "img battons . . .";
-    grid-template-columns: auto 2fr 1fr 1fr 25px;
-    }
-    .discount_price {
-      margin-left: 0;
-    }
-  }*/
+
   
   @media (max-width: 1200px) {
     .productContainer {

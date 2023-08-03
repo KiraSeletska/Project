@@ -1,17 +1,16 @@
-.display{
-    color: white;
-    font-size: 12px;
-    margin: 0;
-    height: 30px;
-display: flex;
-align-items: center;
-justify-content: center;
-opacity: 1;
-width: 100%;
+.display {
+  color: white;
+  font-size: 12px;
+  margin: 0;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  width: 100%;
 }
-.nonDislpay{
-    opacity: 0;
-    width: 100%;
-    height: 30px;
-
+.nonDislpay {
+  opacity: 0;
+  width: 100%;
+  height: 30px;
 }

@@ -29,8 +29,8 @@ export const PropductsByCategory = () => {
 
   return (
     <div className={styles.wrapper}>
-         { /*<h2>{data?.category.title}</h2>*/}
-         <h2>{data && data.category.title}</h2>
+         <h2>{data?.category.title}</h2>
+         {/*<h2>{data && data.category.title}</h2>*/}
       <Filter onChange={onFilterChanged}/>
       {isLoading ? (
         <h2>LOADING <FontAwesomeIcon icon={faSpinner} spinPulse /></h2>

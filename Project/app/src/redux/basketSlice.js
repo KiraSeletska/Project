@@ -38,7 +38,7 @@ const calculateAllTotals = (state) => {
   return {
     totalPrice,
     totalFullPrice,
-    userSaving: (totalFullPrice - totalPrice).toFixed(2),
+    userSaving: +(totalFullPrice - totalPrice).toFixed(2),
   };
 };
 
@@ -88,7 +88,7 @@ export const basketSlice = createSlice({
       Object.assign(state, calculateAllTotals(state));
       write("products", state.products);
     },
-    deletQuantityToProduct: (state, action) => {
+    deletQuantityToProduct: (state, action) => {//можно выбрать foreach и изменить
       state.products = [
         ...state.products.map((el) =>
           el.id !== action.payload || el.quantity === 1
@@ -99,13 +99,6 @@ export const basketSlice = createSlice({
       Object.assign(state, calculateAllTotals(state));
       write("products", state.products);
     },
-    addSearch: (state, action) => {
-      state.search !== undefined 
-      ? state.search = [
-        ...state.search, action.payload
-      ] 
-      : state =  {...state, searsh: action.payload}
-    }
   },
 });
 

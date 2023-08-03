@@ -1,4 +1,4 @@
-.saccessSendPhoneNumber{
+.saccessSendPhoneNumber {
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -9,7 +9,6 @@
   padding: 25px;
   width: auto;
   height: 467px;
-
 }
 
 .saccessSendPhoneNumber h3 {
@@ -23,24 +22,23 @@
   line-height: 30px;
 }
 .text1 {
-display: inline;
+  display: inline;
   margin-bottom: 25px;
 }
-.text2{
+.text2 {
   margin-top: 25px;
 }
-.price{
+.price {
   width: 200px;
   display: inline;
 }
 
-.price, 
-.phone{
+.price,
+.phone {
   color: #393;
   font-size: 25px;
   font-weight: 800;
   margin-left: 15px;
-
 }
 .imageContainer {
   width: auto;

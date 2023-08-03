@@ -65,19 +65,7 @@
   line-height: 20.8px; /* 20.8px */
   letter-spacing: 0.48px;
 }
-/*
-.inputSortByDefault {
-  margin-left: 42px;
-  width: 219px;
-  height: 40px;
-}
-.inputSortByDefault::placeholder {
-  color: #797979;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 20, 8px; /* 20.8px */ /*
-  letter-spacing: 0.48px;
-}*/
+
 @media (max-width: 1100px) {
   .sortContainer{
     grid-template-columns: auto auto auto;
@@ -102,15 +90,7 @@
     display: block;
     font-size: 20px;
   }
-  /*
-  .sortContainer {
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: 300px;
-  }
-   .discountSection {
-    justify-content: space-between;
-  }*/
+
 }
 @media (max-width: 700px) {
   .sortContainer{
