@@ -35,9 +35,11 @@ const calculateFullTotal = (state) =>
 const calculateAllTotals = (state) => {
   const totalPrice = calculateTotal(state);
   const totalFullPrice = calculateFullTotal(state);
+  const search = '';
   return {
     totalPrice,
     totalFullPrice,
+    search,
     userSaving: +(totalFullPrice - totalPrice).toFixed(2),
   };
 };
@@ -99,6 +101,9 @@ export const basketSlice = createSlice({
       Object.assign(state, calculateAllTotals(state));
       write("products", state.products);
     },
+    addSearch: (state, action) => {
+      state.search = action.payload
+    }
   },
 });
 
@@ -109,4 +114,5 @@ export const {
   deletPropductFromBasket,
   addQuantityToProduct,
   deletQuantityToProduct,
+  addSearch
 } = basketSlice.actions;
