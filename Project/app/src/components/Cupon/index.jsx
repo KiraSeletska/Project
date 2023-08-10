@@ -12,18 +12,18 @@ export const Cupon = () => {
     usePostPhoneNumberForDiscountMutation();
 
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [valid, setValid] = useState(true); 
+ // const [valid, setValid] = useState(true); 
 const [showError, setShowError] = useState(false); 
 
   const sendPhoneNumber = () => {
-    const phoneNumberRestrictions = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
+    const phoneNumberRestrictions = /^[\d\+][\d\(\)\ -]{10,14}\d$/;
     if (phoneNumberRestrictions.test(phoneNumber) === false) {
       setShowError(true);
-      setValid(false)
+     // setValid(false)
       setTimeout(() => setShowError(false), 2000);
     } else {
       postNumberForDiscount(phoneNumber);
-      setValid(true)
+    //  setValid(true)
     }
   };
 

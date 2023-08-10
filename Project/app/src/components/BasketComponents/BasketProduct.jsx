@@ -30,7 +30,8 @@ export const BasketProduct = ({
           <span>$</span>
         </p>
         <p className={styles.discount_price}>
-          {discont_price ? price + '$' : ""}
+          {/*discont_price ? price + '$' : ""*/}
+          {discont_price && (price * quantity).toFixed(2) + "$"}
         </p>
       <div className={styles.qualityBattons}>
         <button onClick={() => downQuantity(id)}>
