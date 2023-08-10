@@ -17,11 +17,11 @@
   bottom: 32px;
   opacity: 0;
   transition: opacity 0.3s;
-}
+}/*
 .addToCard:hover {
   opacity: 1;
   transition: opacity 0.3s;
-}
+}*/
 .addToCard:active {
   transform: scale(0.95);
 }

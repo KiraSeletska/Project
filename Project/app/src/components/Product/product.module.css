@@ -18,6 +18,10 @@
   overflow: hidden;
 
 }
+.imgContainer:hover button {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
 .imgContainer img {
   height: auto;
   width: 100%;
