@@ -23,7 +23,7 @@ export const Header = () => {
     <header className={styles.headerContainer}>
       <div className={styles.logoContainer}>
         <img src={logo} alt="Logo" />
-         <NavLink to="/propducts" ><button>Catalog</button> </NavLink>
+         <NavLink  to="/categories" ><button>Catalog</button> </NavLink>
       
       </div>
   
