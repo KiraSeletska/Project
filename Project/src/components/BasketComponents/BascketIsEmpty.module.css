@@ -1,0 +1,25 @@
+.wrapper{
+/*margin-top: 50px;*/
+color: rgb(255, 255, 255);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.wrapper img{
+height: 500px;
+width: auto;
+}
+.wrapper p{
+    font-size: 20px;
+    transform: translate(0px,-450px);
+}
+.wrapper a{
+    font-size: 30px;
+    transform: translate(0px,-120px);
+    color: rgb(255, 255, 255);
+}
+.wrapper a:hover{
+    color: rgb(76, 76, 216);
+
+}

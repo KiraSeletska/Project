@@ -63,7 +63,7 @@ const [showError, setShowError] = useState(false);
                 placeholder="phone number"
                 maxLength={14}
                 minLength={4}
-                defaultValue={'+47'}
+                defaultValue={'+49'}
           />
             </div>
             <div className={styles.errorWindow}>

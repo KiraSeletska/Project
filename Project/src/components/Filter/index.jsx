@@ -23,7 +23,7 @@ export const Filter = ({ onChange, hideDiscountFilter = false }) => {
       <span>Price</span>
       <input
         type="text"
-        placeholder="trom"
+        placeholder="from"
         onChange={(e) => setFromPrice(e.target.value)}
       />
       <input
@@ -55,7 +55,7 @@ export const Filter = ({ onChange, hideDiscountFilter = false }) => {
         onChange={(e) => setSortOrder(e.target.value)}
       >
         <option value="default">
-          by dafault
+          by default
         </option>
         <option value="asc">
           minimum price

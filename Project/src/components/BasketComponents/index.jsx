@@ -12,6 +12,8 @@ import {
 import { OrderForm } from "../../components/BasketComponents/OrderForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
+import { BascketIsEmpty } from "./BascketIsEmpty";
+
 
 export const BasketConstructor = () => {
   const productsInBasket = useSelector((state) => state.basket.products);
@@ -35,13 +37,14 @@ export const BasketConstructor = () => {
     <div className={styles.wrapper}>
       <div className={styles.productsList}>
         <div className={styles.header}>
-          <ClearBasketButton />
-          <NavLink to="/propducts">
+         {productsInBasket.length !== 0 && <ClearBasketButton />} 
+          <NavLink to="/products">
             Back to the store <img src={Back} alt="" />
           </NavLink>
         </div>
 
-        {productsInBasket &&
+        {productsInBasket.length !== 0 
+        ? 
           productsInBasket.map((el) => (
             <BasketProduct
               key={el.id}
@@ -50,7 +53,9 @@ export const BasketConstructor = () => {
               upQuantity={upQuantity}
               deletProduct={deletProduct}
             />
-          ))}
+          ))
+        : <BascketIsEmpty />
+        }
       </div>
       <scroll-page id="basket">      
       <OrderForm

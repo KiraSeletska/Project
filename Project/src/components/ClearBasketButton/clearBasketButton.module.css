@@ -3,6 +3,7 @@
   position: relative;
   align-items: center;
   justify-content: center;
+
 }
 
 .container .btnflip {
@@ -41,6 +42,7 @@
   background: #ffc9c9;
   content: attr(data-back);
   transform: translateY(50%);
+  cursor: pointer;
 }
 .btnflip::before {
   border-radius: 17px;
@@ -51,4 +53,5 @@
   background: #ffffff;
   content: attr(data-front);
   transform: translateY(0) rotateX(0);
+  cursor: pointer;
 }

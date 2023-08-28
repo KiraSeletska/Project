@@ -35,7 +35,7 @@ const [divState, setDivState] = useState(false)
         className={!divState ? ' ' : styles.inputActiv}
         onBlur={()=>setDivState(false)}
           type="text"
-          placeholder="Saerch..."
+          placeholder="Search..."
           onChange={(e) => {
             setnameOfProdact(e.target.value);
             handleClick();

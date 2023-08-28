@@ -11,13 +11,8 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 export const Header = () => {
 
   const totalProducts = useSelector((state) => state.basket.products)
-  const totalProductsQ = useSelector((state) => state.basket)
 
   const [burger, setBurger] = useState(false)
-
-  const showBasket = () => {
-    console.log(totalProductsQ)
-  }
 
   return (
     <header className={styles.headerContainer}>
@@ -35,9 +30,9 @@ export const Header = () => {
             >Main Page</NavLink>
           </li>
           <li>
-            <NavLink to="/propducts"
+            <NavLink to="/products"
                onClick={()=>setBurger(false)}
-            >All propducts</NavLink>
+            >All products</NavLink>
           </li>
           <li>
             <NavLink to="/sales"

@@ -19,7 +19,7 @@ console.log(data)
       <div className={styles.categoriesWrapper}>
         {data &&
           data.map((el) => (
-            <NavLink to={`/categories/${el.id}`}>
+            <NavLink key={el.id} to={`/categories/${el.id}`}>
               <Category
                 key={el.id}
                 title={el.title}

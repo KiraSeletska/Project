@@ -47,9 +47,7 @@
   width: 32px;
   height: 32px;
 }
-.stateBtn {
-  /*display: none;*/
-}
+
 .totalInBasket {
   display: flex;
   justify-content: center;
@@ -148,7 +146,7 @@
     margin-right: 0;
   }
   .list li{
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255);
     padding: 0 30px;
   }
   .listActive {
@@ -165,7 +163,7 @@ margin-top: 10px;
     transition-duration: 1s;
   }
   .listActive li{
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255);
     padding: 0 30px;
   }
   .listActive li:hover{
