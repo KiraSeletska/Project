@@ -5,8 +5,8 @@ import { baseUrl } from "../../redux/categoriesApi";
 import { useDispatch } from "react-redux";
 import { addProductToBasket } from "../../redux/basketSlice";
 import { useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faCartShopping, faSpinner}from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { ProductQuantity } from "../../components/ProductQuantity";
 
 export const SingleProductPage = () => {
@@ -14,22 +14,30 @@ export const SingleProductPage = () => {
   const { data, isLoading, error } = useGetOneProductByCategoryQuery(id);
   const dispatch = useDispatch();
 
-const [status, setStatus] = useState(false)
+  const [status, setStatus] = useState(false);
 
-const defButtonText = 'To cart'
-const basketImage =<FontAwesomeIcon icon={faCartShopping} bounce style={{color: "#ffffff",}}/>
+  const defButtonText = "To cart";
+  const basketImage = (
+    <FontAwesomeIcon
+      icon={faCartShopping}
+      bounce
+      style={{ color: "#ffffff" }}
+    />
+  );
 
   const addToBascetHandler = (event, el) => {
     event.preventDefault();
     dispatch(addProductToBasket(el));
-    setStatus(true)
+    setStatus(true);
     setTimeout(() => setStatus(false), 1000);
   };
 
   return (
     <div>
       {isLoading ? (
-        <h2>LOADING <FontAwesomeIcon icon={faSpinner} spinPulse /></h2>
+        <h2>
+          LOADING <FontAwesomeIcon icon={faSpinner} spinPulse />
+        </h2>
       ) : error ? (
         <h2>Error: {error.error}</h2>
       ) : (
@@ -62,11 +70,11 @@ const basketImage =<FontAwesomeIcon icon={faCartShopping} bounce style={{color: 
                 className={styles.btnToCart}
                 onClick={(event) => addToBascetHandler(event, data[0])}
               >
-               {!status ? defButtonText : basketImage} 
+                {!status ? defButtonText : basketImage}
               </button>
-             <p className={styles.quantity}>
-             <ProductQuantity id={data[0].id}/>
-              </p>
+              <div className={styles.quantity}>
+                <ProductQuantity id={data[0].id} />
+              </div>
               <h6>Description</h6>
               <p className={styles.description}>{data[0].description}</p>
             </div>

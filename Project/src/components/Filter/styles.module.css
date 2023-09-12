@@ -40,7 +40,7 @@
   align-items: center;
   gap: 39px;
 }
-.mediaDiscountSpan{
+.mediaDiscountSpan {
   display: none;
 }
 .discountSection input {
@@ -67,48 +67,46 @@
 }
 
 @media (max-width: 1100px) {
-  .sortContainer{
+  .sortContainer {
     grid-template-columns: auto auto auto;
     align-items: start;
   }
-  .sortContainer span{
+  .sortContainer span {
     font-size: 15px;
-   } 
-   .priceSection {
+  }
+  .priceSection {
     width: 170px;
     flex-wrap: wrap;
     justify-content: flex-end;
-   }
-   .discountSection {
+  }
+  .discountSection {
     gap: 15px;
     width: 50px;
-   }
-   .discountSection span{
+  }
+  .discountSection span {
     display: none;
-   }
-   .discountSection .mediaDiscountSpan{
+  }
+  .discountSection .mediaDiscountSpan {
     display: block;
     font-size: 20px;
   }
-
 }
 @media (max-width: 700px) {
-  .sortContainer{
-    grid-template-areas: 
-    "price sorted"
-    "price procent";
+  .sortContainer {
+    grid-template-areas:
+      "price sorted"
+      "price procent";
     grid-template-columns: auto;
     justify-items: center;
     gap: 15px;
   }
-  .priceSection{
+  .priceSection {
     grid-area: price;
   }
-  .discountSection{
+  .discountSection {
     grid-area: procent;
-
   }
-  .selectSection{
+  .selectSection {
     grid-area: sorted;
     gap: 15px;
   }

@@ -7,7 +7,7 @@ import { baseUrl } from "../../redux/categoriesApi";
 import { addProductToBasket } from "../../redux/basketSlice";
 
 export const ProductsByName = () => {
-  const { data, isLoading, error } = useGetAllPropductsQuery();
+  const { data } = useGetAllPropductsQuery();
 
   const dispatch = useDispatch();
   const nameOfProdact = useSelector((state) => state.basket.search);

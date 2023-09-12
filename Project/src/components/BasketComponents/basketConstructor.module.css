@@ -77,21 +77,19 @@
   letter-spacing: 0.48px;
 }
 .scrollToBasket {
-
   width: 7vw;
   height: 50px;
   position: fixed;
-  bottom: 200px;
-  right: 20px;
+  bottom: 20px;
+  left: 20px;
   border-radius: 17px;
   border: none;
   background-color: rgba(255, 255, 255, 0.4);
-display: none;
+  display: none;
 }
 .scrollToBasket a {
   color: rgb(0, 0, 0, 0.3);
   font-size: 35px;
-
 }
 .scrollToBasket a:hover {
   color: rgb(82, 82, 82);

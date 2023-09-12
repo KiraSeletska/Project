@@ -1,22 +1,19 @@
 .wrapper {
   display: flex;
   flex-direction: column;
-  /*width: 319px;*/
   width: 300px;
 }
 
 .imgContainer {
-  /*width: 319px;*/
   width: 300px;
   height: 276px;
-  background: #FBFBFB;
+  background: #fbfbfb;
   border-radius: 21px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-
 }
 .imgContainer:hover button {
   opacity: 1;
@@ -33,7 +30,6 @@
   gap: 47px;
   margin: 20px 0 10px;
   padding-left: 20px;
-  
 }
 .price {
   color: #000;
@@ -75,13 +71,11 @@
   .imgContainer {
     width: 200px;
     height: 176px;
-
-  
   }
   .priceContainer {
-  width: 100%;
-  gap: 25px;
-  margin: 5px 0 5px;
+    width: 100%;
+    gap: 25px;
+    margin: 5px 0 5px;
   }
   .price {
     font-size: 20px;
@@ -95,7 +89,6 @@
   .title {
     width: 200px;
     font-size: 15px;
-
   }
 }
 @media (max-width: 1000px) {

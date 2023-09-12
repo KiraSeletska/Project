@@ -1,8 +1,8 @@
-import "./App.css";
+
 import { Header } from "./components/Header";
 import { Outlet } from "react-router-dom";
 import { Contact } from "./components/Contact";
-import { UpDownButton } from "./components/UpDownButton";
+import { UpDownButton as UpButton } from "./components/UpButton";
 import { Search } from "./components/Search";
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <Search />
       <Outlet />
       <Contact />
-      <UpDownButton />
+      <UpButton />
     </div>
   );
 }

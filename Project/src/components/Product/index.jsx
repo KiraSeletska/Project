@@ -33,7 +33,7 @@ export const Product = ({
         </span>
       </div>
       <p className={styles.title}>{title}</p>
-     <ProductQuantity id={id}/>
+      <ProductQuantity id={id} />
     </div>
   );
 };

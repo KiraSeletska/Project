@@ -3,7 +3,7 @@ import { baseUrl } from "../../redux/categoriesApi";
 import delet from "../../images/Close.svg";
 import plus from "../../images/Plus.svg";
 import minus from "../../images/Minus.svg";
-//переименовтаь и добавиь / выбрать index
+
 export const BasketProduct = ({
   id,
   image,
@@ -15,24 +15,19 @@ export const BasketProduct = ({
   upQuantity,
   deletProduct,
 }) => {
-
-
   return (
     <div className={styles.productContainer} key={id}>
       <div className={styles.imgContainer}>
         <img src={baseUrl + image} alt="" />
       </div>
       <p className={styles.title}>{title}</p>
-        <p className={styles.price}>
-          {((discont_price
-            ? discont_price
-            : price) * quantity).toFixed(2)}
-          <span>$</span>
-        </p>
-        <p className={styles.discount_price}>
-          {/*discont_price ? price + '$' : ""*/}
-          {discont_price && (price * quantity).toFixed(2) + "$"}
-        </p>
+      <p className={styles.price}>
+        {((discont_price ? discont_price : price) * quantity).toFixed(2)}
+        <span>$</span>
+      </p>
+      <p className={styles.discount_price}>
+        {discont_price && (price * quantity).toFixed(2) + "$"}
+      </p>
       <div className={styles.qualityBattons}>
         <button onClick={() => downQuantity(id)}>
           <img src={minus} alt="" />

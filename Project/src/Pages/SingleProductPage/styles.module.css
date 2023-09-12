@@ -10,10 +10,9 @@
   line-height: 46.8px; /* 46.8px */
   letter-spacing: 1.08px;
   margin-bottom: 34px;
- 
 }
 .container h6 {
-  border-top: 1px dashed #C0C0C0;
+  border-top: 1px dashed #c0c0c0;
   font-size: 20px;
   font-weight: 600;
   line-height: 26px; /* 26px */
@@ -41,15 +40,15 @@
   width: 100%;
   flex-shrink: 0;
 }
-.quantity p{
+.quantity p {
   margin: 20px 0 20px;
   font-size: 20px;
   height: 25px;
- text-align: start;
- color: #8B8B8B;
-font-weight: 500;
-line-height: 26px; /* 26px */
-letter-spacing: 0.6px;
+  text-align: start;
+  color: #8b8b8b;
+  font-weight: 500;
+  line-height: 26px; /* 26px */
+  letter-spacing: 0.6px;
 }
 .description {
   font-size: 20px;
@@ -105,8 +104,8 @@ letter-spacing: 0.6px;
 }
 
 .btnToCart:active {
-background-color: #393;
-transform: scale(0.95);
+  background-color: #393;
+  transform: scale(0.95);
 }
 
 .description {
@@ -138,7 +137,6 @@ transform: scale(0.95);
     margin-left: 30px;
   }
   .procent {
-
     font-size: 25px;
     margin-left: 30px;
   }

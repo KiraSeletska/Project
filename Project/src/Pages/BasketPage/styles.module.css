@@ -1,13 +1,8 @@
 .wrapper {
   margin: 0 30px 143px;
-
 }
 @media (max-width: 1050px) {
   .wrapper {
     margin-bottom: 48px;
-
   }
 }
-
-
-

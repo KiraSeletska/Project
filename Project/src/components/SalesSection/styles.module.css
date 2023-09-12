@@ -32,7 +32,7 @@
 .imgContainer {
   overflow: hidden;
 }
-.imgContainer img{
+.imgContainer img {
   margin-top: -61px;
 }
 
@@ -43,9 +43,8 @@
     background-position-x: right;
     background-position-y: -61px;
     background-repeat: no-repeat;
-    
   }
-  .imgContainer {
+  .imgContainer img{
     display: none;
   }
 }

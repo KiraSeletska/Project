@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const baseUrl = "http://127.0.0.1:3333/";
-// /products/all   - ссылка на все продукты
+
 export const categoriesApi = createApi({
   reducerPath: "categories",
   baseQuery: fetchBaseQuery({ baseUrl: baseUrl }),

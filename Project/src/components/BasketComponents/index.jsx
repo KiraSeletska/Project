@@ -14,7 +14,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBasketShopping } from "@fortawesome/free-solid-svg-icons";
 import { BascketIsEmpty } from "./BascketIsEmpty";
 
-
 export const BasketConstructor = () => {
   const productsInBasket = useSelector((state) => state.basket.products);
   const totalPrice = useSelector((state) => state.basket.totalPrice);
@@ -22,7 +21,7 @@ export const BasketConstructor = () => {
 
   const dispatch = useDispatch();
   const deletProduct = (idEl) => {
-    dispatch(deletPropductFromBasket(idEl)); //Такие повторения нормальны?
+    dispatch(deletPropductFromBasket(idEl));
   };
 
   const upQuantity = (idEl) => {
@@ -37,14 +36,13 @@ export const BasketConstructor = () => {
     <div className={styles.wrapper}>
       <div className={styles.productsList}>
         <div className={styles.header}>
-         {productsInBasket.length !== 0 && <ClearBasketButton />} 
+          {productsInBasket.length !== 0 && <ClearBasketButton />}
           <NavLink to="/products">
             Back to the store <img src={Back} alt="" />
           </NavLink>
         </div>
 
-        {productsInBasket.length !== 0 
-        ? 
+        {productsInBasket.length !== 0 ? (
           productsInBasket.map((el) => (
             <BasketProduct
               key={el.id}
@@ -54,20 +52,22 @@ export const BasketConstructor = () => {
               deletProduct={deletProduct}
             />
           ))
-        : <BascketIsEmpty />
-        }
+        ) : (
+          <BascketIsEmpty />
+        )}
       </div>
-      <scroll-page id="basket">      
-      <OrderForm
-        totalPrice={totalPrice}
-        productsOrdered={productsInBasket}
-        userSaving={userSaving}
-      /></scroll-page>
-      <button className={styles.scrollToBasket}> 
-      <a href="#basket" >
-      <FontAwesomeIcon icon={faBasketShopping} />
-      </a>
-        </button>
+      <scroll-page id="basket">
+        <OrderForm
+          totalPrice={totalPrice}
+          productsOrdered={productsInBasket}
+          userSaving={userSaving}
+        />
+      </scroll-page>
+      <button className={styles.scrollToBasket}>
+        <a href="#basket">
+          <FontAwesomeIcon icon={faBasketShopping} />
+        </a>
+      </button>
     </div>
   );
 };

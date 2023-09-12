@@ -8,6 +8,6 @@ export const store = configureStore({
     [categoriesApi.reducerPath]: categoriesApi.reducer,
   },
   middleware: (
-    getDefaultMiddleware //возьмет дефолтный Middleware и доавть sliceApi.middleware
+    getDefaultMiddleware 
   ) => getDefaultMiddleware().concat(categoriesApi.middleware),
 });

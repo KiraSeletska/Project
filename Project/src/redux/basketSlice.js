@@ -90,7 +90,7 @@ export const basketSlice = createSlice({
       Object.assign(state, calculateAllTotals(state));
       write("products", state.products);
     },
-    deletQuantityToProduct: (state, action) => {//можно выбрать foreach и изменить
+    deletQuantityToProduct: (state, action) => {
       state.products = [
         ...state.products.map((el) =>
           el.id !== action.payload || el.quantity === 1

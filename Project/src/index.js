@@ -3,17 +3,17 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App";
-import { Categories } from "./Pages/Categories";
+import { Categories } from "./Pages/CategoriesPage";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { ErrorPage } from "./Pages/ErrorPage";
 import { MainPage } from "./Pages/MainPage";
-import { AllProducts } from "./Pages/AllProducts";
-import { Basket } from "./Pages/Basket";
+import { AllProducts } from "./Pages/AllProductsPage";
+import { Basket } from "./Pages/BasketPage";
 import { SalesPage } from "./Pages/SalesPage";
-import { PropductsByCategory } from "./Pages/PropductsByCategory";
+import { PropductsByCategory } from "./Pages/PropductsByCategoryPage";
 import { SingleProductPage } from "./Pages/SingleProductPage";
-import { ProductsByName } from "./Pages/ProductsByName";
+import { ProductsByName } from "./Pages/ProductsByNamePage";
 
 const router = createBrowserRouter([
   {

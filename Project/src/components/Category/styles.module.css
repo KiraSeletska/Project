@@ -1,9 +1,7 @@
 .imageContainer {
   position: relative;
- /* width: 318px;*/
-
-width: 310px; 
-height: 350px;
+  width: 310px;
+  height: 350px;
   overflow: hidden;
 }
 .imageContainer img {
@@ -28,6 +26,5 @@ height: 350px;
   .imageContainer {
     width: 200px;
     height: 200px;
-  
   }
 }

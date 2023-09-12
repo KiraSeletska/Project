@@ -1,25 +1,23 @@
 import styles from "./orderForm.module.css";
 import { usePostPhoneNumberForOrderMutation } from "../../redux/categoriesApi";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FormMessage } from "../Messages/formMessage";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { SuccessfullySent } from "../Messages/successfullySent";
+import InputMask from "react-input-mask";
 
 export const OrderForm = ({ totalPrice, productsOrdered, userSaving }) => {
   const [postNumberForOrder, { isError, isLoading, isSuccess, error }] =
     usePostPhoneNumberForOrderMutation();
-  const [phoneNumber, setPhoneNumber] = useState();
-  const [emptyBasket, setEmptyBasket] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [isEmptyBasket, setEmptyBasket] = useState(false);
   const [showError, setShowError] = useState(false);
-
-  const plus = "+";
 
   const order = {
     products: productsOrdered,
-    phoneNumber: plus + phoneNumber,
+    phoneNumber: phoneNumber,
   };
-
   const sendOrder = () => {
     if (productsOrdered.length === 0) {
       setEmptyBasket(true);
@@ -27,20 +25,17 @@ export const OrderForm = ({ totalPrice, productsOrdered, userSaving }) => {
       return;
     }
 
-    const phoneNumberRestrictions = /^[\d\+][\d\(\)\ -]{10,14}\d$/;
-
-    if (phoneNumberRestrictions.test(phoneNumber) === false) {
+    if (phoneNumber.length < 18) {
       setShowError(true);
-      setTimeout(() => setShowError(false), 2000);
     } else {
       postNumberForOrder(order);
     }
   };
-
-  const savePhoneNumber = (e) => {
-    setPhoneNumber(e);
-  };
-
+  useEffect(() => {
+    if (phoneNumber.length === 18) {
+      setShowError(false);
+    }
+  }, [phoneNumber]);
   return (
     <div className={styles.productOrder}>
       {isLoading ? (
@@ -66,12 +61,12 @@ export const OrderForm = ({ totalPrice, productsOrdered, userSaving }) => {
           </div>
 
           <p className={styles.savingInfo}>Your savings: {userSaving}$ </p>
-          <input
-            type="tel"
-            onChange={(e) => savePhoneNumber(e.target.value)}
-            placeholder="phone number"
-            maxLength={14}
-            minLength={4}
+          <InputMask
+            className={styles.input}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            placeholder="+49(999)999-999-99"
+            mask="+4\9(999)999-999-99"
+            maskChar={null}
           />
           <div className={styles.errorMassage}>
             <FormMessage status={showError} />
@@ -84,7 +79,7 @@ export const OrderForm = ({ totalPrice, productsOrdered, userSaving }) => {
           >
             Order
           </button>
-          <p className={emptyBasket ? styles.empty : styles.close}>
+          <p className={isEmptyBasket ? styles.empty : styles.close}>
             Your basket is empty
           </p>
         </form>

@@ -64,7 +64,6 @@
   padding-right: 62px;
   height: 525px;
   border: none;
-
 }
 
 @media (max-width: 1300px) {
@@ -76,12 +75,11 @@
 @media (max-width: 1200px) {
   .infoWrapper {
     grid-template-columns: 1fr;
-   
   }
-  .conectWrapper{
+  .conectWrapper {
     border-bottom: 1px solid rgb(210, 210, 210);
     border-top: 1px solid rgb(210, 210, 210);
-  padding: 25px 0;
+    padding: 25px 0;
   }
   .phone {
     font-size: 50px;
@@ -90,26 +88,25 @@
 @media (max-width: 1000px) {
   .infoWrapper {
     grid-template-columns: 1fr;
-   gap: 50px;
+    gap: 50px;
   }
-  .conectWrapper{
+  .conectWrapper {
     display: grid;
-    grid-template-areas: 
-    "title icons"
-    "phone icons";
+    grid-template-areas:
+      "title icons"
+      "phone icons";
     grid-template-columns: 1fr 200px;
     grid-template-rows: auto;
     align-items: center;
   }
-  .conectWrapper h2{
+  .conectWrapper h2 {
     grid-area: title;
   }
   .iconsContainer {
     grid-area: icons;
     flex-direction: column;
   }
-  .iconContainer img{
- 
+  .iconContainer img {
     margin: auto;
   }
   .phone {
@@ -119,13 +116,11 @@
   }
   .adressWrapper a {
     font-size: 30px;
-
   }
 }
 @media (max-width: 700px) {
   .adressWrapper a {
     font-size: 20px;
-
   }
 
   .iconsContainer img {
@@ -134,10 +129,8 @@
   .workingTime {
     margin-top: 15px;
     font-size: 15px;
-
   }
   .time {
     font-size: 20px;
-
   }
 }

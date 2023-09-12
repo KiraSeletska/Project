@@ -10,7 +10,7 @@ export const Search = () => {
   const dispatch = useDispatch();
 
   const [nameOfProdact, setnameOfProdact] = useState("");
-const [divState, setDivState] = useState(false)
+  const [divState, setDivState] = useState(false);
 
   const navigate = useNavigate();
   const handleClick = () => navigate("/productsSearch");
@@ -20,20 +20,24 @@ const [divState, setDivState] = useState(false)
   }, [nameOfProdact]);
 
   return (
-    <div className={styles.wrapper} 
-   >
-      <div className={!divState ? styles.inputDiv : styles.inputDiv + ' ' + styles.inputDivActive }
-      onFocus={()=>setDivState(true)}
-    
+    <div className={styles.wrapper}>
+      <div
+        className={
+          !divState
+            ? styles.inputDiv
+            : styles.inputDiv + " " + styles.inputDivActive
+        }
+        onFocus={() => setDivState(true)}
       >
-        <button className={styles.searchButton}
-          onFocus={()=>setDivState(true)}
+        <button
+          className={styles.searchButton}
+          onFocus={() => setDivState(true)}
         >
-        <FontAwesomeIcon icon={faMagnifyingGlass} />
-          </button>
+          <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </button>
         <input
-        className={!divState ? ' ' : styles.inputActiv}
-        onBlur={()=>setDivState(false)}
+          className={!divState ? " " : styles.inputActiv}
+          onBlur={() => setDivState(false)}
           type="text"
           placeholder="Search..."
           onChange={(e) => {
@@ -42,13 +46,13 @@ const [divState, setDivState] = useState(false)
           }}
           value={nameOfProdact}
         />
-        <button 
-        className={styles.clearSearchButton}
-        onClick={() => setnameOfProdact("")}>
+        <button
+          className={styles.clearSearchButton}
+          onClick={() => setnameOfProdact("")}
+        >
           {<FontAwesomeIcon icon={faXmark} />}
         </button>
       </div>
-      
     </div>
   );
 };
